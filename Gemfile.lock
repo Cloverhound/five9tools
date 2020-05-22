@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    Five9Tools (0.1.0)
+    five9tools (0.1.0)
       colorize (~> 0.8.1)
       dotenv
       fileutils (~> 1.4.1)
@@ -62,7 +62,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  Five9Tools!
+  five9tools!
   rake (~> 13.0.1)
   rspec (~> 3.0)
 

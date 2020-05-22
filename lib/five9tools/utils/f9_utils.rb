@@ -12,8 +12,14 @@ module Five9Tools
             },
             :wav_file => base64_file
         }
-        res = safely_upload_or_replace_wav(soap, message).to_s.yellow.bold
-        puts res
+        safely_upload_or_replace_wav(soap, message).to_s.yellow.bold
+    end
+
+    def upload_wavs_in_dir(soap, directory_name)
+        files = get_files_recursively(directory_name)
+        files.map do |f|
+            upload_wav(soap, f)
+        end
     end
 
     def safely_upload_or_replace_wav(soap, message)
@@ -46,6 +52,11 @@ module Five9Tools
     def to_base64(file_name)
         data = File.open(file_name).read
         Base64.encode64(data)
+    end
+
+    def get_files_recursively(directory_path)
+        Dir["#{directory_path}/**/*"].each {|f| if File.file?(f) then puts "Getting #{f}".yellow.bold end }
+        Dir["#{directory_path}/**/*"].filter_map {|f| if File.file?(f) then f end }
     end
 
 end

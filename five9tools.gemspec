@@ -1,7 +1,7 @@
 require_relative 'lib/Five9Tools/version'
 require 'rake'
 Gem::Specification.new do |spec|
-  spec.name          = "Five9Tools"
+  spec.name          = "five9tools"
   spec.version       = Five9Tools::VERSION
   spec.authors       = ["sherbondito"]
   spec.email         = ["zachary.sherbondy@gmail.com"]
