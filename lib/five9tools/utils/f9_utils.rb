@@ -12,7 +12,8 @@ module Five9Tools
             },
             :wav_file => base64_file
         }
-        safely_upload_or_replace_wav(soap, message).to_s.yellow.bold
+        res = safely_upload_or_replace_wav(soap, message).to_s.yellow.bold
+        puts res
     end
 
     def safely_upload_or_replace_wav(soap, message)
@@ -21,7 +22,11 @@ module Five9Tools
             soap.call(:add_prompt_wav_inline, :message => message)
         rescue => exception
             puts "#{exception} \n\n Replacing wav instead".cyan
-            soap.call(:modify_prompt_wav_inline, :message => message)
+            begin
+                soap.call(:modify_prompt_wav_inline, :message => message)
+            rescue => exception
+                raise UploadFailureError
+            end
         end
     end
 
