@@ -1,9 +1,8 @@
-require_relative 'spec_helper'
+require "./spec_helper"
 
-describe 'f9 soap wrapper features' do
-
+describe "f9 soap wrapper features" do
   before(:each) do
-    @soap = Five9Tools::create_soap(ENV['F9USERNAME'], ENV['F9PASSWORD'])
+    @soap = Five9Tools::create_soap(ENV["F9USERNAME"], ENV["F9PASSWORD"])
     @operations = Five9Tools::get_soap_operations(@soap)
   end
 
@@ -21,4 +20,3 @@ describe 'f9 soap wrapper features' do
     expect("Something").to eq("Something")
   end
 end
-
