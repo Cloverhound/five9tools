@@ -6,8 +6,8 @@ require "dotenv"
 require "savon"
 require "base64"
 
-require "Five9Tools/version"
-require "Five9Tools/utils/f9_utils"
+require "five9tools/version"
+require "five9tools/utils/f9_utils"
 
 module Five9Tools
   class Error < StandardError; end
