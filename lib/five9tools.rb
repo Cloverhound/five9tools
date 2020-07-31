@@ -4,9 +4,14 @@ require "uri"
 require "dotenv"
 require "savon"
 require "base64"
+require "csv"
+require "amazing_print"
 
-require "five9tools/version"
-require "five9tools/utils/f9_utils"
+# require "five9tools/version"
+require_relative "five9tools/utils/five9_prompt_utils"
+require_relative "five9tools/utils/five9_helpers"
+require_relative "five9tools/utils/five9_admin"
+require_relative "five9tools/utils/five9_ivr_utils"
 
 module Five9Tools
   class Error < StandardError; end

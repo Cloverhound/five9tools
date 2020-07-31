@@ -27,5 +27,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "nokogiri"
   spec.add_runtime_dependency "savon", "~> 2.12.0"
   spec.add_runtime_dependency "dotenv"
+  spec.add_runtime_dependency "awesome_print"
   spec.add_development_dependency "rspec", "~> 3.6"
 end
