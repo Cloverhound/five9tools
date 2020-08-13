@@ -6,7 +6,7 @@ module Five9Tools
     # Example... get_users_info.body will return the body of the response.
 
     def create_soap(username = ENV["FIVE9_USERNAME"], password = ENV["FIVE9_PASSWORD"])
-      url = "https://api.five9.com/wsadmin/v#{F9_VERSION}/AdminWebService?wsdl"
+      url = "https://api.five9.com/wsadmin/v#{F9_VERSION}/AdminWebService?wsdl&user=#{username}"
       Savon.client(wsdl: url, basic_auth: [username, password])
     end
 

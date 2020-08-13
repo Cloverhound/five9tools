@@ -2,9 +2,12 @@
 
 ## Usage
 
+Ruby 2.6.5+ recommended
+
 For now...
 
 ```
+bundler install
 irb
 require_relative 'lib/five9tools'
 
