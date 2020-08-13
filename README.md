@@ -66,7 +66,7 @@ p response.body
 ### you can also do a direct call from the savan object, like this
 
 ```ruby
-f9_soap = Five9Admin::Five9Tools::create_soap("username", "password")
+f9_soap = Five9Tools::Five9Admin::create_soap("username", "password")
 f9_soap.call(:get_prompts)
 
 #note that all camelCase attributes in soap definitions become under_case with the savon gem
