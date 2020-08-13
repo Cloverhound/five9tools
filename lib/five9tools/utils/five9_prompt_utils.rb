@@ -122,6 +122,5 @@ module Five9Tools
     def get_prompts(soap)
       soap.call(:get_prompts)
     end
-
   end
 end
