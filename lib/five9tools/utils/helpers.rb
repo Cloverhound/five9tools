@@ -1,5 +1,5 @@
 module Five9Tools
-  module Five9Helpers
+  module Helpers
     module_function
 
     class Error < StandardError; end

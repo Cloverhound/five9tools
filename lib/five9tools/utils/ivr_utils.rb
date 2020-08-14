@@ -1,5 +1,5 @@
 module Five9Tools
-  module Five9IvrUtils
+  module IvrUtils
     module_function
 
     def get_ivr_scripts(soap)
@@ -32,7 +32,7 @@ module Five9Tools
 
     def generate_case_statement_xml(ivr_update_hash, last_id)
       case_xml_nodes = ivr_update_hash.each_with_index.map { |x, i|
-        module_id = "8AD257D13AC94AB2BA72FF#{Five9Tools::Five9Helpers.pseudo_random_string(10)}".upcase
+        module_id = "8AD257D13AC94AB2BA72FF#{Five9Tools::Helpers.pseudo_random_string(10)}".upcase
         case_id = last_id.to_i + i + 1
         x["case_module_id"] = module_id
         create_case_statement_child_node(x[:key], x[:var], x[:val], case_id, x[:set_var_module_id])
@@ -45,7 +45,7 @@ module Five9Tools
       set_var_xml_nodes = ivr_update_hash.each_with_index.map { |x, i|
         loc_x = 200 + (i + 40)
         loc_y = 200 + (i * 10)
-        module_id = "8BD257D13AC94AB2BA72FF#{Five9Tools::Five9Helpers.pseudo_random_string(10)}".upcase
+        module_id = "8BD257D13AC94AB2BA72FF#{Five9Tools::Helpers.pseudo_random_string(10)}".upcase
         x[:set_var_module_id] = module_id
         create_set_variable_child_node(x[:setvarvalueskill], parent_module_id, hangup_id, loc_x, loc_y, module_id, i)
       }.join("\n")
@@ -146,14 +146,14 @@ module Five9Tools
       ivr_xml_file = "/Users/zsherbondy/desktop/temp/JG DS DNIS Check.five9ivr"
       module_name_of_node = "DNIS?"
       xml_string = File.read(ivr_xml_file)
-      ivr_update_hash = Five9Tools::Five9Helpers.csv_to_hash_arr("/Users/zsherbondy/desktop/temp/cases.csv")
+      ivr_update_hash = Five9Tools::Helpers.csv_to_hash_arr("/Users/zsherbondy/desktop/temp/cases.csv")
       doc = generate_modified_xml(xml_string, module_name_of_node, ivr_update_hash)
       write_ivr_to_file(ivr_xml_file, doc)
     end
 
     def get_ivr_update_hash
       ivr_xml_file = "/Users/zsherbondy/desktop/temp/JG DS DNIS Check.five9ivr"
-      Five9Tools::Five9Helpers.csv_to_hash_arr("/Users/zsherbondy/desktop/temp/cases.csv")
+      Five9Tools::Helpers.csv_to_hash_arr("/Users/zsherbondy/desktop/temp/cases.csv")
     end
   end
 end

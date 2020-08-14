@@ -1,5 +1,5 @@
 module Five9Tools
-  module Five9PromptUtils
+  module PromptUtils
     module_function
 
     class Error < StandardError; end
@@ -11,7 +11,7 @@ module Five9Tools
     end
 
     def upload_prompts_in_dir(soap, directory_name)
-      files = Five9Tools::Five9Helpers::get_files_recursively(directory_name)
+      files = Five9Tools::Helpers::get_files_recursively(directory_name)
       multilingual_files = get_multilingual_prompts(files)
       puts "MULTILINGUAL FILES DETECTED", multilingual_files
       english_files = files - multilingual_files
@@ -22,7 +22,7 @@ module Five9Tools
 
     def upload_prompt(soap, file_name, language_code = "en-US")
       file_name_no_ext = file_name.sub(/\.#{file_name.split(".").last}/, "").split("/").last.split("____").last
-      base64_file = Five9Tools::Five9Helpers::to_base64(file_name)
+      base64_file = Five9Tools::Helpers::to_base64(file_name)
       lang_code_id = Five9Tools::LanguageUtils::to_five9_accepted(language_code)
       message = {
         :prompt => {
@@ -76,7 +76,7 @@ module Five9Tools
 
     def modify_prompt(soap, file_name, language_code_id = "en-US")
       file_name_no_ext = file_name.sub(/\.#{file_name.split(".").last}/, "").split("/").last.split("____").last
-      base64_file = Five9Tools::Five9Helpers::to_base64(file_name)
+      base64_file = Five9Tools::Helpers::to_base64(file_name)
       lang_code_id = Five9Tools::LanguageUtils::to_five9_accepted(language_code_id)
       message = {
         :prompt => {
