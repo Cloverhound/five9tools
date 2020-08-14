@@ -10,22 +10,37 @@ require_relative 'lib/five9tools'
 
 ```
 
+### Create a Client
+
+```ruby
+client = Five9Tools::Five9Admin::Client.new("your_five9_username", "your_five9_password")
+
+OR
+#use ENV vars
+# export FIVE9_USERNAME=your_username
+# export FIVE9_PASSWORD=your_password
+
+# You can then call the client with arity of 0 to save typing
+
+client = Five9Tools::Five9Admin::Client.new
+```
+
 ### Upload a Prompt
 
 ```ruby
 
-f9_soap = Five9Tools::Five9Admin::create_soap("your_five9_username", "your_five9_password")
+client = Five9Tools::Five9Admin::Client.new("your_five9_username", "your_five9_password")
 
-response = Five9Tools::Five9PromptUtils::upload_wav(f9_soap, "/path/to/your/g711/file.wav")
+response = client.upload_wav("/path/to/your/g711/file.wav")
 
 ```
 
 ### Get a Campaign Profile Filter
 
 ```ruby
-f9_soap = Five9Tools::Five9Admin::create_soap("your_five9_username", "your_five9_password")
+client = Five9Tools::Five9Admin::Client.new("your_five9_username", "your_five9_password")
 
-response = Five9Tools::Five9Admin::get_campaign_profile_filter(soap, "Dev Campaign Profile")
+response = client.get_campaign_profile_filter("Dev Campaign Profile")
 
 p response.body
 
@@ -35,7 +50,7 @@ p response.body
 ### Modify a Campaign Profile Filter
 
 ```ruby
-f9_soap = Five9Tools::Five9Admin::create_soap("your_five9_username", "your_five9_password")
+client = Five9Tools::Five9Admin::Client.new("your_five9_username", "your_five9_password")
 
 filter_message = {
         :profileName => "profile name",
@@ -55,7 +70,7 @@ filter_message = {
         },
       }
 
-response = Five9Tools::Five9Admin::modify_campaign_profile_crm_criteria(soap, filter_message)
+response = client.modify_campaign_profile_crm_criteria_response(filter_message)
 
 p response.body
 
@@ -66,11 +81,11 @@ p response.body
 ### you can also do a direct call from the savan object, like this
 
 ```ruby
-f9_soap = Five9Tools::Five9Admin::create_soap("username", "password")
-f9_soap.call(:get_prompts)
+client = Five9Tools::Five9Admin::Client.new("your_five9_username", "your_five9_password")
+client.client.call(:get_prompts)
 
 #note that all camelCase attributes in soap definitions become under_case with the savon gem
-f9_soap.call(:get_agent_group, :message => {
+client.client.call(:get_agent_group, :message => {
     :group_name => "TheEagles"
 })
 
