@@ -12,9 +12,9 @@ require "json"
 require_relative "five9tools/utils/prompt_utils"
 require_relative "five9tools/utils/helpers"
 require_relative "five9tools/utils/admin_utils"
-require_relative "five9tools/utils/admin"
 require_relative "five9tools/utils/ivr_utils"
 require_relative "five9tools/utils/language_utils"
+require_relative "five9tools/utils/admin"
 
 module Five9Tools
   class Error < StandardError; end

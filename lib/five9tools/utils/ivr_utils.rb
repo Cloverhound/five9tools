@@ -4,8 +4,8 @@ module Five9Tools
 
     public
 
-    def get_ivr_scripts(soap)
-      ivr_scripts = soap.call(:get_ivr_scripts)
+    def get_ivr_scripts
+      ivr_scripts = self.client.call(:get_ivr_scripts)
       ivr_scripts.body[:get_ivr_scripts_response][:return]
     end
 

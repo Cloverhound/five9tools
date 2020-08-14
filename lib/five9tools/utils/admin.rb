@@ -7,6 +7,7 @@ module Five9Tools
 
     class Client
       include Five9Tools::AdminUtils
+      include Five9Tools::IvrUtils
 
       def initialize(username = ENV["FIVE9_USERNAME"], password = ENV["FIVE9_PASSWORD"])
         url = "https://api.five9.com/wsadmin/v#{F9_VERSION}/AdminWebService?wsdl&username=#{username}"
@@ -21,7 +22,7 @@ module Five9Tools
         @client.call(:get_users_info)
       end
 
-      def soap_client
+      def client
         @client
       end
 
