@@ -112,7 +112,7 @@ module Five9Tools
         }
         begin
           res = @client.call(:get_campaign_profile_filter, :message => message)
-          return res.body[:get_campaign_profile_filter][:return]
+          return res.body[:get_campaign_profile_filter_response][:return]
         rescue Savon::SOAPFault => error
           fault_code = error.to_hash[:fault][:faultcode]
           p "Error making SOAP call: #{error.to_hash}"
