@@ -2,6 +2,8 @@ module Five9Tools
   module Admin
     module_function
 
+    require 'erb'
+
     # use .body on ANY client response to get the response body payload.
     # Example... get_users_info.body will return the body of the response.
 
@@ -10,7 +12,7 @@ module Five9Tools
       include Five9Tools::IvrUtils
 
       def initialize(username = ENV["FIVE9_USERNAME"], password = ENV["FIVE9_PASSWORD"])
-        url = "https://api.five9.com/wsadmin/v#{F9_VERSION}/AdminWebService?wsdl&username=#{username}"
+        url = "https://api.five9.com/wsadmin/v#{F9_VERSION}/AdminWebService?wsdl&user=#{ERB::Util.url_encode(username)}"
         @client = Savon.client(wsdl: url, basic_auth: [username, password])
       end
 
