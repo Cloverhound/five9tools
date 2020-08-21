@@ -9,7 +9,33 @@ module Five9Tools
       ivr_scripts.body[:get_ivr_scripts_response][:return]
     end
 
-    def replace_ivr_script
+    def replace_ivr_script(ivr_script_name, ivr_script_contents)
+      message = {
+        :scriptDef => {
+          :name => ivr_script_name,
+          :xmlDefinition => ivr_script_contents
+        }
+      }
+      res = self.client.call(:modify_ivr_script, :message => message)
+      res.body
+    end
+
+    def get_function_contents(ivr_script_name, function_name)
+      ivr_xml_data = self.get_ivr_script(ivr_script_name)
+      doc = Nokogiri::XML ivr_xml_data
+      f = doc.at_xpath("//functions//entry//value[name=\'#{function_name}\']//functionBody").text
+      Five9Tools::Helpers::decode_ivr_script_function(f)
+    end
+
+    def function_contents_json_to_csv(ivr_script_name, function_name, bracket_index_of_json=0)
+      
+      function_json = JSON.parse(function_json_text)
+      Five9Tools::Helpers::json_to_csv function_json
+    end
+
+    def get_json_from_function(ivr_script_name, function_name, bracket_index_of_json=0)
+      function_contents = get_function_contents(ivr_script_name, function_name)
+      Five9Tools::Helpers.extract_json_from_text(function_contents, bracket_index_of_json)
     end
 
     def get_last_id(xml_string, module_name_of_node, xpath_of_id)

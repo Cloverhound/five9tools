@@ -10,6 +10,7 @@ module Five9Tools
     class Client
       include Five9Tools::AdminUtils
       include Five9Tools::IvrUtils
+      include Five9Tools::Reports
 
       def initialize(username = ENV["FIVE9_USERNAME"], password = ENV["FIVE9_PASSWORD"])
         url = "https://api.five9.com/wsadmin/v#{F9_VERSION}/AdminWebService?wsdl&user=#{ERB::Util.url_encode(username)}"
@@ -26,15 +27,6 @@ module Five9Tools
 
       def client
         @client
-      end
-
-      def arr_of_hashes_to_csv(arr_of_hashes)
-        CSV.open("test.csv", "w") do |csv|
-          csv << ["username", "skills"]
-          arr_of_hashes.each do |ob|
-            csv << [ob.keys, ob.values].flatten
-          end
-        end
       end
 
       def write_new_skill_to_users(skills_to_add, user_csv)
@@ -118,6 +110,18 @@ module Five9Tools
           p "Error making SOAP call: #{error.to_hash}"
           raise error
         end
+      end
+
+      def get_ivr_script(ivr_script_name="get_all_scripts")
+        message = {
+          :namePattern => ivr_script_name
+        }
+        if ivr_script_name == "get_all_scripts"
+          res = @client.call(:get_ivr_scripts)
+        else
+          res = @client.call(:get_ivr_scripts, :message => message  )
+        end
+        res.body[:get_ivr_scripts_response][:return][:xml_definition]
       end
 
       def remove_dnis_from_campaign(campaign, number)
