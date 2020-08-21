@@ -16,7 +16,7 @@ require_relative 'lib/five9tools'
 ### Create a Client
 
 ```ruby
-client = Five9Tools::Five9Admin::Client.new("your_five9_username", "your_five9_password")
+client = Five9Tools::Admin::Client.new("your_five9_username", "your_five9_password")
 
 OR
 #use ENV vars
@@ -25,14 +25,14 @@ OR
 
 # You can then call the client with arity of 0 to save typing
 
-client = Five9Tools::Five9Admin::Client.new
+client = Five9Tools::Admin::Client.new
 ```
 
 ### Upload a Prompt
 
 ```ruby
 
-client = Five9Tools::Five9Admin::Client.new("your_five9_username", "your_five9_password")
+client = Five9Tools::Admin::Client.new("your_five9_username", "your_five9_password")
 
 response = client.upload_wav("/path/to/your/g711/file.wav")
 
@@ -41,7 +41,7 @@ response = client.upload_wav("/path/to/your/g711/file.wav")
 ### Get a Campaign Profile Filter
 
 ```ruby
-client = Five9Tools::Five9Admin::Client.new("your_five9_username", "your_five9_password")
+client = Five9Tools::Admin::Client.new("your_five9_username", "your_five9_password")
 
 response = client.get_campaign_profile_filter("Dev Campaign Profile")
 
@@ -53,7 +53,7 @@ p response.body
 ### Modify a Campaign Profile Filter
 
 ```ruby
-client = Five9Tools::Five9Admin::Client.new("your_five9_username", "your_five9_password")
+client = Five9Tools::Admin::Client.new("your_five9_username", "your_five9_password")
 
 filter_message = {
         :profileName => "profile name",
@@ -84,7 +84,7 @@ p response.body
 ### you can also do a direct call from the savan object, like this
 
 ```ruby
-client = Five9Tools::Five9Admin::Client.new("your_five9_username", "your_five9_password")
+client = Five9Tools::Admin::Client.new("your_five9_username", "your_five9_password")
 client.client.call(:get_prompts)
 
 #note that all camelCase attributes in soap definitions become under_case with the savon gem

@@ -1,5 +1,4 @@
 require "./lib/five9tools/version"
-require "rake"
 Gem::Specification.new do |spec|
   spec.name = "five9tools"
   spec.version = Five9Tools::VERSION

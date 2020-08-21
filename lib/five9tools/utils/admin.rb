@@ -2,6 +2,8 @@ module Five9Tools
   module Admin
     module_function
 
+    require 'erb'
+
     # use .body on ANY client response to get the response body payload.
     # Example... get_users_info.body will return the body of the response.
 
@@ -11,7 +13,7 @@ module Five9Tools
       include Five9Tools::Reports
 
       def initialize(username = ENV["FIVE9_USERNAME"], password = ENV["FIVE9_PASSWORD"])
-        url = "https://api.five9.com/wsadmin/v#{F9_VERSION}/AdminWebService?wsdl&username=#{username}"
+        url = "https://api.five9.com/wsadmin/v#{F9_VERSION}/AdminWebService?wsdl&user=#{ERB::Util.url_encode(username)}"
         @client = Savon.client(wsdl: url, basic_auth: [username, password])
       end
 
@@ -85,11 +87,29 @@ module Five9Tools
         @client.call(:add_dnis_to_campaign, :message => message)
       end
 
-      def get_campaign_profile_filter(campaign_profile)
+      def get_campaign_profiles()
+        begin
+          res = @client.call(:get_campaign_profiles)
+          res.body[:get_campaign_profiles_response][:return]
+        rescue Savon::SOAPFault => error
+          fault_code = error.to_hash[:fault][:faultcode]
+          p "Error making SOAP call: #{error.to_hash}"
+          raise error
+        end
+      end
+
+      def get_campaign_profile_filter(name)
         message = {
-          :profileName => campaign_profile,
+          :profileName => name,
         }
-        @client.call(:get_campaign_profile_filter, :message => message)
+        begin
+          res = @client.call(:get_campaign_profile_filter, :message => message)
+          return res.body[:get_campaign_profile_filter_response][:return]
+        rescue Savon::SOAPFault => error
+          fault_code = error.to_hash[:fault][:faultcode]
+          p "Error making SOAP call: #{error.to_hash}"
+          raise error
+        end
       end
 
       def get_ivr_script(ivr_script_name="get_all_scripts")
