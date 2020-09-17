@@ -4,5 +4,3 @@ source "https://rubygems.org"
 gemspec
 
 gem "rake", "~> 13.0.1"
-gem 'sinatra'
-gem 'yard'

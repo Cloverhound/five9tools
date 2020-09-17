@@ -94,7 +94,8 @@ c.client.call(:get_prompts)
 c.client.call(:get_agent_group, :message => {
     :group_name => "TheEagles"
 })
-
-#and any elements / tags must be case sensitive to the API you are calling. So if there is an attribute like paradeDateOrTime, you must do :paradeDateOrTime
-#and if there is something like weight-lost, you must do something like "weight-lost" as the key.
 ```
+
+# Full Documentation
+
+[Documentation](https://www.rubydoc.info/github/Cloverhound/five9tools/master/Five9Tools/Admin/Client)
