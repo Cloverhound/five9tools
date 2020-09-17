@@ -183,6 +183,26 @@ module Five9Tools
         @client.call(:user_skill_add, :message => message)
       end
 
+      # @example Get all details about a specific Five9 user
+      #   c.get_user_info("zach.sherbondy@cloverhound.com")
+      #   {
+      #     :get_user_info_response => {
+      #       :return => {
+      #     :agent_groups => [
+      #         [0] "CH Admin",
+      #         [1] "CH Agent"
+      #     ],
+      #     :general_info => {
+      #                       :active => true,
+      #          :can_change_password => true,
+      #                       :e_mail => "zsherbondy@cloverhound.com",
+      #                    :extension => "0005",
+      #                   :first_name => "Zach",
+      #                    :full_name => "Zach Sherbondy", ...}}
+      def get_user_info(username)
+        @client.call(:get_user_info, message: {userName: username})
+      end
+
       def start_campaign_safely(campaign, number)
         #needs a dnis NUMBER to assign to campaign, since five9 only lets you start campaigns that have a dnis
         begin
