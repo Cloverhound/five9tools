@@ -22,13 +22,18 @@ module Five9Tools
       Base64.encode64(data)
     end
 
-    def extract_json_from_text(text, index=0)
-      res = text.scan(/\{(.*?)\}/m).flatten[index]
-      "{#{res}}"
+    def extract_json_from_text(text, index = 0)
+      json_re = /\{(?:[^{}]|\g<0>)*\}|\[(?:[^{}]|\g<0>)*\]/m
+      res = text.scan(json_re)
+      if res.length() > 1
+        res.map { |v| JSON.parse(v) }[index].to_json
+      else
+        JSON.parse(res[0]).to_json
+      end
     end
 
     def gunzip(text)
-      gz = Zlib::GzipReader.new(StringIO.new(text.to_s))    
+      gz = Zlib::GzipReader.new(StringIO.new(text.to_s))
       gz.read
     end
 
@@ -53,39 +58,37 @@ module Five9Tools
     def csv_to_json(text)
       csv_arr = CSV.parse(text)
       arr_of_data = csv_arr[1..-1].map { |r|
-        csv_arr[0].map.each_with_index {|header, i|
+        csv_arr[0].map.each_with_index { |header, i|
           [header, r[i]]
         }.to_h
       }.to_json
     end
-
 
     def json_to_csv(json_text, headers: true)
       j = JSON.parse(json_text)
       case j
       when Hash
         if headers then headers = j.keys else headers = "" end
-          CSV.generate do |csv|
-            unless headers == "" then csv << headers end
-            csv << j.values
-          end
+        CSV.generate do |csv|
+          unless headers == "" then csv << headers end
+          csv << j.values
+        end
       when Array
         if headers then headers = j.first.keys else headers = "" end
-          CSV.generate do |csv|
-            unless headers == "" then csv << headers end
-            j.each do|elem| 
-              csv << elem.values 
-            end
+        CSV.generate do |csv|
+          unless headers == "" then csv << headers end
+          j.each do |elem|
+            csv << elem.values
           end
+        end
       else
-        raise StandardError.new <<-EOF 
+        raise StandardError.new <<-EOF
           Incompatible Json Format for CSV Conversion.\n
           Make sure to either use\n{\"k\": \"v\"} \n
           or\n
           [{\"k1\":\"v1\"}, {\"k2\", \"v2\"}]
           EOF
       end
-
     end
 
     def pseudo_random_string(chars)

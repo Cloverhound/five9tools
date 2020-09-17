@@ -13,11 +13,27 @@ module Five9Tools
       message = {
         :scriptDef => {
           :name => ivr_script_name,
-          :xmlDefinition => ivr_script_contents
-        }
+          :xmlDefinition => ivr_script_contents,
+        },
       }
       res = self.client.call(:modify_ivr_script, :message => message)
       res.body
+    end
+
+    def get_function_json(ivr_script_name, function_name, options = { bracket_index_of_json: 0, format: "json" })
+      puts "parameters provided: #{{ ivr_script_name: ivr_script_name, function_name: function_name, options: options }}"
+      function_contents = self.get_function_contents(ivr_script_name, function_name)
+      function_json_data = self.get_json_from_function(function_contents, options[:bracket_index_of_json])
+      case options[:format]
+      when "csv"
+        Five9Tools::Helpers::json_to_csv function_json_data
+      when "json"
+        function_json_data
+      when "hash"
+        JSON.parse(function_json_data)
+      else
+        raise StandardError.new "Unacceptable Format #{options[:format]}"
+      end
     end
 
     def get_function_contents(ivr_script_name, function_name)
@@ -27,14 +43,7 @@ module Five9Tools
       Five9Tools::Helpers::decode_ivr_script_function(f)
     end
 
-    def function_contents_json_to_csv(ivr_script_name, function_name, bracket_index_of_json=0)
-      
-      function_json = JSON.parse(function_json_text)
-      Five9Tools::Helpers::json_to_csv function_json
-    end
-
-    def get_json_from_function(ivr_script_name, function_name, bracket_index_of_json=0)
-      function_contents = get_function_contents(ivr_script_name, function_name)
+    def get_json_from_function(function_contents, bracket_index_of_json = 0)
       Five9Tools::Helpers.extract_json_from_text(function_contents, bracket_index_of_json)
     end
 

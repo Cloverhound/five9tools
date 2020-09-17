@@ -13,11 +13,14 @@ module Five9Tools
       end
     end
 
-    def function_contents_json_to_csv(ivr_script_name, function_name, bracket_index_of_json=0)
-      function_json_data = Five9Tools:IvrUtils::get_json_from_function(ivr_script_name, function_name, bracket_index_of_json)
-      function_json = JSON.parse(function_json_text)
-      Five9Tools::Helpers::json_to_csv function_json
+    def write_csv_of_ivr_function_json_to_file(ivr_script, function, output_file_path, options = { bracket_index_of_json: 0 })
+      begin
+        csv_data = self.get_function_json(ivr_script, function, format: "csv")
+        File.open(output_file_path, "w+") { |f| f.write csv_data }
+      rescue => e
+        d = File.dirname(output_file_path)
+        File.open(File.join(d, "f9log.txt"), "w+") { |f| f.write e.to_s }
+      end
     end
-
   end
 end

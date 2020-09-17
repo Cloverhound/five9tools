@@ -2,48 +2,51 @@
 
 ## Usage
 
-Ruby 2.6.5+ recommended
+Ruby 2.7.0+ recommended
 
-For now...
-
+```sh
+git clone git@github.com:Cloverhound/five9tools.git
+cd five9tools
+rake build && rake install
 ```
-bundler install
-irb
-require_relative 'lib/five9tools'
 
+Include in your project
+
+```ruby
+require 'five9tools'
 ```
 
 ### Create a Client
 
 ```ruby
-client = Five9Tools::Admin::Client.new("your_five9_username", "your_five9_password")
+c = Five9Tools::Admin::Client.new("your_five9_username", "your_five9_password")
 
 OR
-#use ENV vars
+# use ENV vars
 # export FIVE9_USERNAME=your_username
 # export FIVE9_PASSWORD=your_password
 
-# You can then call the client with arity of 0 to save typing
+# You can then call the c with arity of 0 to save typing
 
-client = Five9Tools::Admin::Client.new
+c = Five9Tools::Admin::Client.new
 ```
 
 ### Upload a Prompt
 
 ```ruby
 
-client = Five9Tools::Admin::Client.new("your_five9_username", "your_five9_password")
+c = Five9Tools::Admin::Client.new("your_five9_username", "your_five9_password")
 
-response = client.upload_wav("/path/to/your/g711/file.wav")
+response = c.upload_wav("/path/to/your/g711/file.wav")
 
 ```
 
 ### Get a Campaign Profile Filter
 
 ```ruby
-client = Five9Tools::Admin::Client.new("your_five9_username", "your_five9_password")
+c = Five9Tools::Admin::Client.new("your_five9_username", "your_five9_password")
 
-response = client.get_campaign_profile_filter("Dev Campaign Profile")
+response = c.get_campaign_profile_filter("Dev Campaign Profile")
 
 p response.body
 
@@ -53,7 +56,7 @@ p response.body
 ### Modify a Campaign Profile Filter
 
 ```ruby
-client = Five9Tools::Admin::Client.new("your_five9_username", "your_five9_password")
+c = Five9Tools::Admin::Client.new("your_five9_username", "your_five9_password")
 
 filter_message = {
         :profileName => "profile name",
@@ -73,7 +76,7 @@ filter_message = {
         },
       }
 
-response = client.modify_campaign_profile_crm_criteria_response(filter_message)
+response = c.modify_campaign_profile_crm_criteria_response(filter_message)
 
 p response.body
 
@@ -81,14 +84,14 @@ p response.body
 
 ```
 
-### you can also do a direct call from the savan object, like this
+### you can also do a direct call from the Savan object, like this
 
 ```ruby
-client = Five9Tools::Admin::Client.new("your_five9_username", "your_five9_password")
-client.client.call(:get_prompts)
+c = Five9Tools::Admin::Client.new("your_five9_username", "your_five9_password")
+c.client.call(:get_prompts)
 
 #note that all camelCase attributes in soap definitions become under_case with the savon gem
-client.client.call(:get_agent_group, :message => {
+c.client.call(:get_agent_group, :message => {
     :group_name => "TheEagles"
 })
 
