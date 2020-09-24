@@ -1,0 +1,14 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:createSpeedDialNumber>
+            <!--Optional:-->
+            <code>?</code>
+            <!--Optional:-->
+            <number>?</number>
+            <!--Optional:-->
+            <description>?</description>
+        </ser:createSpeedDialNumber>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,39 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:setDialingRules>
+            <!--Zero or more repetitions:-->
+            <setRules>
+                <!--Optional:-->
+                <applyToManualCalls>?</applyToManualCalls>
+                <!--Optional:-->
+                <contactText>?</contactText>
+                <!--Optional:-->
+                <dateRange>
+                    <!--Zero or more repetitions:-->
+                    <daysOfWeek>?</daysOfWeek>
+                    <!--Optional:-->
+                    <endDate>?</endDate>
+                    <!--Optional:-->
+                    <startDate>?</startDate>
+                </dateRange>
+                <!--Optional:-->
+                <fixedTimeZone>?</fixedTimeZone>
+                <!--Optional:-->
+                <name>?</name>
+                <!--Optional:-->
+                <state>?</state>
+                <!--Optional:-->
+                <timeRange>
+                    <startHour>?</startHour>
+                    <startMinute>?</startMinute>
+                    <stopHour>?</stopHour>
+                    <stopMinute>?</stopMinute>
+                </timeRange>
+            </setRules>
+            <!--Zero or more repetitions:-->
+            <removeRules>?</removeRules>
+        </ser:setDialingRules>
+    </soapenv:Body>
+</soapenv:Envelope>

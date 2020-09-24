@@ -1,0 +1,18 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+   xmlns:ser="http://service.admin.ws.five9.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:userSkillModify>
+         <!--Optional:-->
+         <userSkill>
+            <!--Optional:-->
+            <id>?</id>
+            <level>?</level>
+            <!--Optional:-->
+            <skillName>?</skillName>
+            <!--Optional:-->
+            <userName>?</userName>
+         </userSkill>
+      </ser:userSkillModify>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,12 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:renameDisposition>
+            <!--Optional:-->
+            <dispositionName>?</dispositionName>
+            <!--Optional:-->
+            <dispositionNewName>?</dispositionNewName>
+        </ser:renameDisposition>
+    </soapenv:Body>
+</soapenv:Envelope>

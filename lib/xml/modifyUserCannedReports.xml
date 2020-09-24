@@ -1,0 +1,19 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:modifyUserCannedReports>
+            <!--Optional:-->
+            <userName>?</userName>
+            <!--Zero or more repetitions:-->
+            <cannedReportsToAdd>
+                <!--Optional:-->
+                <index>?</index>
+                <!--Optional:-->
+                <name>?</name>
+            </cannedReportsToAdd>
+            <!--Zero or more repetitions:-->
+            <cannedReportsToRemove>?</cannedReportsToRemove>
+        </ser:modifyUserCannedReports>
+    </soapenv:Body>
+</soapenv:Envelope>

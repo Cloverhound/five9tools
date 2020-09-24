@@ -1,0 +1,14 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:addDispositionsToCampaign>
+            <!--Optional:-->
+            <campaignName>?</campaignName>
+            <!--Zero or more repetitions:-->
+            <dispositions>?</dispositions>
+            <!--Optional:-->
+            <isSkipPreviewDisposition>?</isSkipPreviewDisposition>
+        </ser:addDispositionsToCampaign>
+    </soapenv:Body>
+</soapenv:Envelope>

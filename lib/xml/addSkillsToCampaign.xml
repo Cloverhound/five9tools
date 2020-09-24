@@ -1,0 +1,12 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:addSkillsToCampaign>
+            <!--Optional:-->
+            <campaignName>?</campaignName>
+            <!--Zero or more repetitions:-->
+            <skills>?</skills>
+        </ser:addSkillsToCampaign>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -113,5 +113,36 @@ module Five9Tools
       gzipped = gzip(text)
       Base64.encode64(gzipped)
     end
+
+    # class Nokogiri::XML::Node
+    #   TYPENAMES = { 1 => "element", 2 => "attribute", 3 => "text", 4 => "cdata", 8 => "comment" }
+
+    #   def to_hash
+    #     { kind: TYPENAMES[node_type], name: name }.tap do |h|
+    #       h.merge! nshref: namespace.href, nsprefix: namespace.prefix if namespace
+    #       h.merge! text: text
+    #       h.merge! attr: attribute_nodes.map(&:to_hash) if element?
+    #       h.merge! kids: children.map(&:to_hash) if element?
+    #     end
+    #   end
+    # end
+
+    # class Nokogiri::XML::Document
+    #   def to_hash; root.to_hash; end
+    # end
+
+    # # @example Convert Five9 XML Params from wsdl into hash based params from cli
+    # # rake docs:hashify_xml_params\[xml_string\]
+
+    # def xml_to_hash(params)
+    #   if params[:type] == "text"
+    #     xml_s = params[:data]
+    #   else
+    #     xml_s = File.read(params[:data])
+    #   end
+    #     doc = Nokogiri::XML(xml_s)
+    #     doc.to_hash
+    #   end
+    # end
   end
 end

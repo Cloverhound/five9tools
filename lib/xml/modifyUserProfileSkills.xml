@@ -1,0 +1,14 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:modifyUserProfileSkills>
+            <!--Optional:-->
+            <userProfileName>?</userProfileName>
+            <!--Zero or more repetitions:-->
+            <addSkills>?</addSkills>
+            <!--Zero or more repetitions:-->
+            <removeSkills>?</removeSkills>
+        </ser:modifyUserProfileSkills>
+    </soapenv:Body>
+</soapenv:Envelope>

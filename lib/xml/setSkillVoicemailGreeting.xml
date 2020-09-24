@@ -1,0 +1,12 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:setSkillVoicemailGreeting>
+            <!--Optional:-->
+            <skillName>?</skillName>
+            <!--Optional:-->
+            <wavFile>cid:477747584523</wavFile>
+        </ser:setSkillVoicemailGreeting>
+    </soapenv:Body>
+</soapenv:Envelope>

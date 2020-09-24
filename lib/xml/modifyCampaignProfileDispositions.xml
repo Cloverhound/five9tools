@@ -1,0 +1,24 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:modifyCampaignProfileDispositions>
+            <!--Optional:-->
+            <profileName>?</profileName>
+            <!--Zero or more repetitions:-->
+            <addDispositionCounts>
+                <!--Optional:-->
+                <count>?</count>
+                <!--Zero or more repetitions:-->
+                <dispositions>?</dispositions>
+            </addDispositionCounts>
+            <!--Zero or more repetitions:-->
+            <removeDispositionCounts>
+                <!--Optional:-->
+                <count>?</count>
+                <!--Zero or more repetitions:-->
+                <dispositions>?</dispositions>
+            </removeDispositionCounts>
+        </ser:modifyCampaignProfileDispositions>
+    </soapenv:Body>
+</soapenv:Envelope>

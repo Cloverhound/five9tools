@@ -1,0 +1,34 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:createSkill>
+            <!--Optional:-->
+            <skillInfo>
+                <!--Optional:-->
+                <skill>
+                    <!--Optional:-->
+                    <description>?</description>
+                    <!--Optional:-->
+                    <id>?</id>
+                    <!--Optional:-->
+                    <messageOfTheDay>?</messageOfTheDay>
+                    <!--Optional:-->
+                    <name>?</name>
+                    <!--Optional:-->
+                    <routeVoiceMails>?</routeVoiceMails>
+                </skill>
+                <!--Zero or more repetitions:-->
+                <users>
+                    <!--Optional:-->
+                    <id>?</id>
+                    <level>?</level>
+                    <!--Optional:-->
+                    <skillName>?</skillName>
+                    <!--Optional:-->
+                    <userName>?</userName>
+           e </users>
+            </skillInfo>
+        </ser:createSkill>
+    </soapenv:Body>
+</soapenv:Envelope>

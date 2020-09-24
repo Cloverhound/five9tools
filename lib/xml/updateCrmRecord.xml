@@ -1,0 +1,42 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:updateCrmRecord>
+            <!--Optional:-->
+            <crmUpdateSettings>
+                <!--Optional:-->
+                <allowDataCleanup>?</allowDataCleanup>
+                <!--Optional:-->
+                <callbackFormat>?</callbackFormat>
+                <!--Optional:-->
+                <callbackUrl>?</callbackUrl>
+                <!--Optional:-->
+                <countryCode>?</countryCode>
+                <!--Optional:-->
+                <failOnFieldParseError>?</failOnFieldParseError>
+                <!--Zero or more repetitions:-->
+                <fieldsMapping>
+                    <columnNumber>?</columnNumber>
+                    <!--Optional:-->
+                    <fieldName>?</fieldName>
+                    <key>?</key>
+                </fieldsMapping>
+                <!--Optional:-->
+                <reportEmail>?</reportEmail>
+                <!--Optional:-->
+                <separator>?</separator>
+                <skipHeaderLine>?</skipHeaderLine>
+                <!--Optional:-->
+                <crmAddMode>?</crmAddMode>
+                <!--Optional:-->
+                <crmUpdateMode>?</crmUpdateMode>
+            </crmUpdateSettings>
+            <!--Optional:-->
+            <record>
+                <!--Zero or more repetitions:-->
+                <fields>?</fields>
+            </record>
+        </ser:updateCrmRecord>
+    </soapenv:Body>
+</soapenv:Envelope>

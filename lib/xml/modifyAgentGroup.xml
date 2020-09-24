@@ -1,0 +1,23 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:modifyAgentGroup>
+            <!--Optional:-->
+            <group>
+                <!--Zero or more repetitions:-->
+                <agents>?</agents>
+                <!--Optional:-->
+                <description>?</description>
+                <!--Optional:-->
+                <id>?</id>
+                <!--Optional:-->
+                <name>?</name>
+            </group>
+            <!--Zero or more repetitions:-->
+            <addAgents>?</addAgents>
+            <!--Zero or more repetitions:-->
+            <removeAgents>?</removeAgents>
+        </ser:modifyAgentGroup>
+    </soapenv:Body>
+</soapenv:Envelope>

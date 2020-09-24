@@ -1,0 +1,32 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:addPromptTTS>
+            <!--Optional:-->
+            <prompt>
+                <!--Optional:-->
+                <description>?</description>
+                <!--Zero or more repetitions:-->
+                <languages>?</languages>
+                <!--Optional:-->
+                <name>?</name>
+                <!--Optional:-->
+                <type>?</type>
+            </prompt>
+            <!--Optional:-->
+            <ttsInfo>
+                <!--Optional:-->
+                <language>?</language>
+                <!--Optional:-->
+                <sayAs>?</sayAs>
+                <!--Optional:-->
+                <sayAsFormat>?</sayAsFormat>
+                <!--Optional:-->
+                <text>?</text>
+                <!--Optional:-->
+                <voice>?</voice>
+            </ttsInfo>
+        </ser:addPromptTTS>
+    </soapenv:Body>
+</soapenv:Envelope>

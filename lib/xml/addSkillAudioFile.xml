@@ -1,0 +1,12 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:addSkillAudioFile>
+            <!--Optional:-->
+            <skillName>?</skillName>
+            <!--Optional:-->
+            <promptName>?</promptName>
+        </ser:addSkillAudioFile>
+    </soapenv:Body>
+</soapenv:Envelope>

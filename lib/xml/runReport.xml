@@ -1,0 +1,29 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:runReport>
+            <!--Optional:-->
+            <folderName>?</folderName>
+            <!--Optional:-->
+            <reportName>?</reportName>
+            <!--Optional:-->
+            <criteria>
+                <!--Zero or more repetitions:-->
+                <reportObjects>
+                    <!--Zero or more repetitions:-->
+                    <objectNames>?</objectNames>
+                    <!--Optional:-->
+                    <objectType>?</objectType>
+                </reportObjects>
+                <!--Optional:-->
+                <time>
+                    <!--Optional:-->
+                    <end>?</end>
+                    <!--Optional:-->
+                    <start>?</start>
+                </time>
+            </criteria>
+        </ser:runReport>
+    </soapenv:Body>
+</soapenv:Envelope>

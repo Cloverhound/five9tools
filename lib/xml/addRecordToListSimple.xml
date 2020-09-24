@@ -1,0 +1,33 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:addRecordToListSimple>
+            <!--Optional:-->
+            <listName>?</listName>
+            <!--Optional:-->
+            <listUpdateSimpleSettings>
+                <!--Optional:-->
+                <callAsap>?</callAsap>
+                <!--Optional:-->
+                <countryCode>?</countryCode>
+                <!--Zero or more repetitions:-->
+                <fieldsMapping>
+                    <columnNumber>?</columnNumber>
+                    <!--Optional:-->
+                    <fieldName>?</fieldName>
+                    <key>?</key>
+                </fieldsMapping>
+                <!--Optional:-->
+                <timeToCall>?</timeToCall>
+                <!--Optional:-->
+                <updateCRM>?</updateCRM>
+            </listUpdateSimpleSettings>
+            <!--Optional:-->
+            <record>
+                <!--Zero or more repetitions:-->
+                <fields>?</fields>
+            </record>
+        </ser:addRecordToListSimple>
+    </soapenv:Body>
+</soapenv:Envelope>

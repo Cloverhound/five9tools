@@ -1,0 +1,50 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:updateDispositions>
+            <!--Optional:-->
+            <campaignName>?</campaignName>
+            <!--Optional:-->
+            <DispositionsUpdateSettings>
+                <!--Optional:-->
+                <allowDataCleanup>?</allowDataCleanup>
+                <!--Optional:-->
+                <callbackFormat>?</callbackFormat>
+                <!--Optional:-->
+                <callbackUrl>?</callbackUrl>
+                <!--Optional:-->
+                <countryCode>?</countryCode>
+                <!--Optional:-->
+                <failOnFieldParseError>?</failOnFieldParseError>
+                <!--Zero or more repetitions:-->
+                <fieldsMapping>
+                    <columnNumber>?</columnNumber>
+                    <!--Optional:-->
+                    <fieldName>?</fieldName>
+                    <key>?</key>
+                </fieldsMapping>
+                <!--Optional:-->
+                <reportEmail>?</reportEmail>
+                <!--Optional:-->
+                <separator>?</separator>
+                <skipHeaderLine>?</skipHeaderLine>
+                <!--Optional:-->
+                <commonDispositionValue>?</commonDispositionValue>
+                <dispositionColumnNumber>?</dispositionColumnNumber>
+                <!--Optional:-->
+                <dispositionsUpdateMode>?</dispositionsUpdateMode>
+                <updateToCommonDisposition>?</updateToCommonDisposition>
+                <warnIfNoCrmMatchFound>?</warnIfNoCrmMatchFound>
+            </DispositionsUpdateSettings>
+            <!--Optional:-->
+            <importData>
+                <!--Zero or more repetitions:-->
+                <values>
+                    <!--Zero or more repetitions:-->
+                    <item>?</item>
+                </values>
+            </importData>
+        </ser:updateDispositions>
+    </soapenv:Body>
+</soapenv:Envelope>

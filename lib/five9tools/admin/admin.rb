@@ -31,6 +31,14 @@ module Five9Tools
       include Five9Tools::IvrUtils
       include Five9Tools::PromptUtils
       include Five9Tools::Reports
+      include Five9Tools::Add
+      include Five9Tools::Create
+      include Five9Tools::Delete
+      include Five9Tools::Get
+      include Five9Tools::Modify
+      include Five9Tools::Misc
+      include Five9Tools::Remove
+      include Five9Tools::Update
 
       #Savon is used to create a SOAP client that reaches out to the Five9 WSDL file
       # @example Create a new Five9 Admin Client so you can bulk change and query Five9 systems with ease.
@@ -48,10 +56,6 @@ module Five9Tools
       #Lists all of the Five9 API operations possible by the Five9 Webservices API
       def operations
         @client.operations
-      end
-
-      def get_users_info
-        @client.call(:get_users_info)
       end
 
       # @example Directly Call a Savon Client Operation
@@ -72,97 +76,6 @@ module Five9Tools
           end
         end
         acc
-      end
-
-      # @example Modify a campaign profile filter
-      #   filter_message = {
-      #     :profileName => "profile name",
-      #     :grouping => {
-      #       :expression => "1",
-      #       :type => "Custom",
-      #     },
-      #     :addCriteria => {
-      #       :compareOperator => "Less",
-      #       :leftValue => "LastDispositionDateTime",
-      #       :rightValue => "2020-08-13 19:00:00.000",
-      #     },
-      #     :removeCriteria => {
-      #       :compareOperator => "Less",
-      #       :leftValue => "LastDispositionDateTime",
-      #       :rightValue => "2020-08-12 19:00:00.000",
-      #     },
-      #   }
-      #   c.modify_campaign_profile_crm_critteria(filter_message)
-
-      def modify_campaign_profile_crm_criteria(filter_message = {})
-        @client.call(:modify_campaign_profile_crm_criteria, :message => filter_message)
-      end
-
-      def stop_campaign(campaign)
-        message = {
-          :campaignName => campaign,
-        }
-        @client.call(:stop_campaign, :message => message)
-      end
-
-      def start_campaign(campaign)
-        message = {
-          :campaignName => campaign,
-        }
-        @client.call(:start_campaign, :message => message)
-      end
-
-      def add_dnis_to_campaign(campaign, number)
-        message = {
-          :campaignName => campaign,
-          "DNISList" => number,
-        }
-        @client.call(:add_dnis_to_campaign, :message => message)
-      end
-
-      def get_campaign_profiles()
-        begin
-          res = @client.call(:get_campaign_profiles)
-          res.body[:get_campaign_profiles_response][:return]
-        rescue Savon::SOAPFault => error
-          fault_code = error.to_hash[:fault][:faultcode]
-          p "Error making SOAP call: #{error.to_hash}"
-          raise error
-        end
-      end
-
-      def get_campaign_profile_filter(name)
-        message = {
-          :profileName => name,
-        }
-        begin
-          res = @client.call(:get_campaign_profile_filter, :message => message)
-          return res.body[:get_campaign_profile_filter_response][:return]
-        rescue Savon::SOAPFault => error
-          fault_code = error.to_hash[:fault][:faultcode]
-          p "Error making SOAP call: #{error.to_hash}"
-          raise error
-        end
-      end
-
-      def get_ivr_script(ivr_script_name = "get_all_scripts")
-        message = {
-          :namePattern => ivr_script_name,
-        }
-        if ivr_script_name == "get_all_scripts"
-          res = @client.call(:get_ivr_scripts)
-        else
-          res = @client.call(:get_ivr_scripts, :message => message)
-        end
-        res.body[:get_ivr_scripts_response][:return][:xml_definition]
-      end
-
-      def remove_dnis_from_campaign(campaign, number)
-        message = {
-          :campaignName => campaign,
-          "DNISList" => number,
-        }
-        @client.call(:remove_dnis_from_campaign, :message => message)
       end
 
       def modify_user(message)
@@ -200,7 +113,7 @@ module Five9Tools
       #                   :first_name => "Zach",
       #                    :full_name => "Zach Sherbondy", ...}}
       def get_user_info(username)
-        @client.call(:get_user_info, message: {userName: username})
+        @client.call(:get_user_info, message: { userName: username })
       end
 
       def start_campaign_safely(campaign, number)

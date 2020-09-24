@@ -1,0 +1,23 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:updateConfigurationTranslations>
+            <!--Optional:-->
+            <localeName>?</localeName>
+            <!--Zero or more repetitions:-->
+            <diffTranslations>
+                <!--Optional:-->
+                <comment>?</comment>
+                <!--Optional:-->
+                <objectField>?</objectField>
+                <!--Optional:-->
+                <objectId>?</objectId>
+                <!--Optional:-->
+                <objectType>?</objectType>
+                <!--Optional:-->
+                <value>?</value>
+            </diffTranslations>
+        </ser:updateConfigurationTranslations>
+    </soapenv:Body>
+</soapenv:Envelope>

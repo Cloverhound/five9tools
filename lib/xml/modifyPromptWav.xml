@@ -1,0 +1,21 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:modifyPromptWav>
+            <!--Optional:-->
+            <prompt>
+                <!--Optional:-->
+                <description>?</description>
+                <!--Zero or more repetitions:-->
+                <languages>?</languages>
+                <!--Optional:-->
+                <name>?</name>
+                <!--Optional:-->
+                <type>?</type>
+            </prompt>
+            <!--Optional:-->
+            <wavFile>cid:1267819525925</wavFile>
+        </ser:modifyPromptWav>
+    </soapenv:Body>
+</soapenv:Envelope>

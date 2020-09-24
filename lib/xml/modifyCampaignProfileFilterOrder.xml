@@ -1,0 +1,21 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:modifyCampaignProfileFilterOrder>
+            <!--Optional:-->
+            <campaignProfile>?</campaignProfile>
+            <!--Zero or more repetitions:-->
+            <addOrderByField>
+                <!--Optional:-->
+                <descending>?</descending>
+                <!--Optional:-->
+                <fieldName>?</fieldName>
+                <!--Optional:-->
+                <rank>?</rank>
+            </addOrderByField>
+            <!--Zero or more repetitions:-->
+            <removeOrderByField>?</removeOrderByField>
+        </ser:modifyCampaignProfileFilterOrder>
+    </soapenv:Body>
+</soapenv:Envelope>

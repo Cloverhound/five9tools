@@ -1,0 +1,13 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:getCrmImportResult>
+            <!--Optional:-->
+            <identifier>
+                <!--Optional:-->
+                <identifier>?</identifier>
+            </identifier>
+        </ser:getCrmImportResult>
+    </soapenv:Body>
+</soapenv:Envelope>

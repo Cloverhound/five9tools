@@ -1,0 +1,43 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:setCampaignStrategies>
+            <!--Optional:-->
+            <campaignName>?</campaignName>
+            <!--Optional:-->
+            <campaignStrategies>
+                <!--Zero or more repetitions:-->
+                <strategies>
+                    <!--Optional:-->
+                    <description>?</description>
+                    <enabled>?</enabled>
+                    <!--Optional:-->
+                    <filter>
+                        <!--Optional:-->
+                        <conditionGroupingType>?</conditionGroupingType>
+                        <!--Zero or more repetitions:-->
+                        <conditions>
+                            <!--Optional:-->
+                            <compareOperator>?</compareOperator>
+                            <!--Optional:-->
+                            <leftValue>?</leftValue>
+                            <!--Optional:-->
+                            <rightValue>?</rightValue>
+                        </conditions>
+                        <!--Optional:-->
+                        <customGrouping>?</customGrouping>
+                    </filter>
+                    <!--Optional:-->
+                    <name>?</name>
+                    <!--Zero or more repetitions:-->
+                    <schedule>
+                        <redialAfterMins>?</redialAfterMins>
+                        <startFromDay>?</startFromDay>
+                    </schedule>
+                    <startAfterTimeMins>?</startAfterTimeMins>
+                </strategies>
+            </campaignStrategies>
+        </ser:setCampaignStrategies>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,23 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:addListsToCampaign>
+            <!--Optional:-->
+            <campaignName>?</campaignName>
+            <!--Zero or more repetitions:-->
+            <lists>
+                <!--Optional:-->
+                <campaignName>?</campaignName>
+                <!--Optional:-->
+                <dialingPriority>?</dialingPriority>
+                <!--Optional:-->
+                <dialingRatio>?</dialingRatio>
+                <!--Optional:-->
+                <listName>?</listName>
+                <!--Optional:-->
+                <priority>?</priority>
+            </lists>
+        </ser:addListsToCampaign>
+    </soapenv:Body>
+</soapenv:Envelope>

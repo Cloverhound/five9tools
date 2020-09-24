@@ -1,0 +1,23 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:setDefaultIVRSchedule>
+            <!--Optional:-->
+            <campaignName>?</campaignName>
+            <!--Optional:-->
+            <scriptName>?</scriptName>
+            <!--Zero or more repetitions:-->
+            <params>
+                <!--Optional:-->
+                <name>?</name>
+                <!--Optional:-->
+                <value>?</value>
+            </params>
+            <!--Optional:-->
+            <isVisualModeEnabled>?</isVisualModeEnabled>
+            <!--Optional:-->
+            <isChatEnabled>?</isChatEnabled>
+        </ser:setDefaultIVRSchedule>
+    </soapenv:Body>
+</soapenv:Envelope>

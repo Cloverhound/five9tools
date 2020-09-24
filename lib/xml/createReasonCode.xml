@@ -1,0 +1,21 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:createReasonCode>
+            <!--Optional:-->
+            <reasonCode>
+                <!--Optional:-->
+                <enabled>?</enabled>
+                <!--Optional:-->
+                <name>?</name>
+                <!--Optional:-->
+                <paidTime>?</paidTime>
+                <!--Optional:-->
+                <shortcut>?</shortcut>
+                <!--Optional:-->
+                <type>?</type>
+            </reasonCode>
+        </ser:createReasonCode>
+    </soapenv:Body>
+</soapenv:Envelope>

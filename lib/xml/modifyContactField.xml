@@ -1,0 +1,28 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:modifyContactField>
+            <!--Optional:-->
+            <field>
+                <!--Optional:-->
+                <displayAs>?</displayAs>
+                <!--Optional:-->
+                <mapTo>?</mapTo>
+                <!--Optional:-->
+                <name>?</name>
+                <!--Zero or more repetitions:-->
+                <restrictions>
+                    <!--Optional:-->
+                    <type>?</type>
+                    <!--Optional:-->
+                    <value>?</value>
+                </restrictions>
+                <!--Optional:-->
+                <system>?</system>
+                <!--Optional:-->
+                <type>?</type>
+            </field>
+        </ser:modifyContactField>
+    </soapenv:Body>
+</soapenv:Envelope>

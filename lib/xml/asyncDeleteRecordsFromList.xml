@@ -1,0 +1,45 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:asyncDeleteRecordsFromList>
+            <!--Optional:-->
+            <listName>?</listName>
+            <!--Optional:-->
+            <listDeleteSettings>
+                <!--Optional:-->
+                <allowDataCleanup>?</allowDataCleanup>
+                <!--Optional:-->
+                <callbackFormat>?</callbackFormat>
+                <!--Optional:-->
+                <callbackUrl>?</callbackUrl>
+                <!--Optional:-->
+                <countryCode>?</countryCode>
+                <!--Optional:-->
+                <failOnFieldParseError>?</failOnFieldParseError>
+                <!--Zero or more repetitions:-->
+                <fieldsMapping>
+                    <columnNumber>?</columnNumber>
+                    <!--Optional:-->
+                    <fieldName>?</fieldName>
+                    <key>?</key>
+                </fieldsMapping>
+                <!--Optional:-->
+                <reportEmail>?</reportEmail>
+                <!--Optional:-->
+                <separator>?</separator>
+                <skipHeaderLine>?</skipHeaderLine>
+                <!--Optional:-->
+                <listDeleteMode>?</listDeleteMode>
+            </listDeleteSettings>
+            <!--Optional:-->
+            <importData>
+                <!--Zero or more repetitions:-->
+                <values>
+                    <!--Zero or more repetitions:-->
+                    <item>?</item>
+                </values>
+            </importData>
+        </ser:asyncDeleteRecordsFromList>
+    </soapenv:Body>
+</soapenv:Envelope>

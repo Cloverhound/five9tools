@@ -1,0 +1,19 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:setIvrIcons>
+            <!--Optional:-->
+            <ivrScriptName>?</ivrScriptName>
+            <!--Optional:-->
+            <ivrIcons>
+                <!--Optional:-->
+                <largeIcon>cid:1213443401460</largeIcon>
+                <!--Optional:-->
+                <mediumIcon>cid:1406259721318</mediumIcon>
+                <!--Optional:-->
+                <smallIcon>cid:1254852683434</smallIcon>
+            </ivrIcons>
+        </ser:setIvrIcons>
+    </soapenv:Body>
+</soapenv:Envelope>

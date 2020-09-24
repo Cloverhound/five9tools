@@ -1,0 +1,60 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:asyncAddRecordsToList>
+            <!--Optional:-->
+            <listName>?</listName>
+            <!--Optional:-->
+            <listUpdateSettings>
+                <!--Optional:-->
+                <allowDataCleanup>?</allowDataCleanup>
+                <!--Optional:-->
+                <callbackFormat>?</callbackFormat>
+                <!--Optional:-->
+                <callbackUrl>?</callbackUrl>
+                <!--Optional:-->
+                <countryCode>?</countryCode>
+                <!--Optional:-->
+                <failOnFieldParseError>?</failOnFieldParseError>
+                <!--Zero or more repetitions:-->
+                <fieldsMapping>
+                    <columnNumber>?</columnNumber>
+                    <!--Optional:-->
+                    <fieldName>?</fieldName>
+                    <key>?</key>
+                </fieldsMapping>
+                <!--Optional:-->
+                <reportEmail>?</reportEmail>
+                <!--Optional:-->
+                <separator>?</separator>
+                <skipHeaderLine>?</skipHeaderLine>
+                <!--Optional:-->
+                <callNowColumnNumber>?</callNowColumnNumber>
+                <!--Optional:-->
+                <callNowMode>?</callNowMode>
+                <!--Optional:-->
+                <callTime>?</callTime>
+                <!--Optional:-->
+                <callTimeColumnNumber>?</callTimeColumnNumber>
+                <cleanListBeforeUpdate>?</cleanListBeforeUpdate>
+                <!--Optional:-->
+                <crmAddMode>?</crmAddMode>
+                <!--Optional:-->
+                <crmUpdateMode>?</crmUpdateMode>
+                <!--Optional:-->
+                <listAddMode>?</listAddMode>
+            </listUpdateSettings>
+            <!--Optional:-->
+            <importData>
+                <!--Zero or more repetitions:-->
+                <values>
+                    <!--Zero or more repetitions:-->
+                    <item>?</item>
+                </values>
+            </importData>
+            <!--Zero or more repetitions:-->
+            <resetDispositionsInCampaignsImportData>?</resetDispositionsInCampaignsImportData>
+        </ser:asyncAddRecordsToList>
+    </soapenv:Body>
+</soapenv:Envelope>

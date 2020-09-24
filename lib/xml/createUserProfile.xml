@@ -1,0 +1,88 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:createUserProfile>
+            <!--Optional:-->
+            <userProfile>
+                <!--Optional:-->
+                <description>?</description>
+                <!--Optional:-->
+                <IEXScheduled>?</IEXScheduled>
+                <!--Optional:-->
+                <locale>?</locale>
+                <!--Optional:-->
+                <mediaTypeConfig>
+                    <!--Zero or more repetitions:-->
+                    <mediaTypes>
+                        <!--Optional:-->
+                        <enabled>?</enabled>
+                        <!--Optional:-->
+                        <intlligentRouting>?</intlligentRouting>
+                        <!--Optional:-->
+                        <maxAlowed>?</maxAlowed>
+                        <!--Optional:-->
+                        <type>?</type>
+                    </mediaTypes>
+                </mediaTypeConfig>
+                <!--Optional:-->
+                <name>?</name>
+                <!--Optional:-->
+                <roles>
+                    <!--Optional:-->
+                    <admin>
+                        <!--Zero or more repetitions:-->
+                        <permissions>
+                            <!--Optional:-->
+                            <type>?</type>
+                            <value>?</value>
+                        </permissions>
+                    </admin>
+                    <!--Optional:-->
+                    <agent>
+                        <alwaysRecorded>?</alwaysRecorded>
+                        <attachVmToEmail>?</attachVmToEmail>
+                        <!--Zero or more repetitions:-->
+                        <permissions>
+                            <!--Optional:-->
+                            <type>?</type>
+                            <value>?</value>
+                        </permissions>
+                        <sendEmailOnVm>?</sendEmailOnVm>
+                    </agent>
+                    <!--Optional:-->
+                    <crmManager>
+                        <!--Zero or more repetitions:-->
+                        <permissions>
+                            <!--Optional:-->
+                            <type>?</type>
+                            <value>?</value>
+                        </permissions>
+                    </crmManager>
+                    <!--Optional:-->
+                    <reporting>
+                        <!--Zero or more repetitions:-->
+                        <permissions>
+                            <!--Optional:-->
+                            <type>?</type>
+                            <value>?</value>
+                        </permissions>
+                    </reporting>
+                    <!--Optional:-->
+                    <supervisor>
+                        <!--Zero or more repetitions:-->
+                        <permissions>
+                            <!--Optional:-->
+                            <type>?</type>
+                            <value>?</value>
+                        </permissions>
+                    </supervisor>
+                </roles>
+                <!--Zero or more repetitions:-->
+                <skills>?</skills>
+                <!--Zero or more repetitions:-->
+                <users>?</users>
+            </userProfile>
+        </ser:createUserProfile>
+    </soapenv:Body>
+</soapenv:Envelope>

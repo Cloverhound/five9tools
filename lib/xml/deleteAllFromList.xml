@@ -1,0 +1,16 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:deleteAllFromList>
+            <!--Optional:-->
+            <listName>?</listName>
+            <!--Optional:-->
+            <reportEmail>?</reportEmail>
+            <!--Optional:-->
+            <callbackUrl>?</callbackUrl>
+            <!--Optional:-->
+            <callbackFormat>?</callbackFormat>
+        </ser:deleteAllFromList>
+    </soapenv:Body>
+</soapenv:Envelope>

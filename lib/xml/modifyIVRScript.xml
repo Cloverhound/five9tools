@@ -1,0 +1,17 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:modifyIVRScript>
+            <!--Optional:-->
+            <scriptDef>
+                <!--Optional:-->
+                <description>?</description>
+                <!--Optional:-->
+                <name>?</name>
+                <!--Optional:-->
+                <xmlDefinition>?</xmlDefinition>
+            </scriptDef>
+        </ser:modifyIVRScript>
+    </soapenv:Body>
+</soapenv:Envelope>

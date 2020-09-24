@@ -1,0 +1,10 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:checkDncForNumbers>
+            <!--Zero or more repetitions:-->
+            <numbers>?</numbers>
+        </ser:checkDncForNumbers>
+    </soapenv:Body>
+</soapenv:Envelope>

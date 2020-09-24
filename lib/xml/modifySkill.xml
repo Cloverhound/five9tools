@@ -1,0 +1,21 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:modifySkill>
+            <!--Optional:-->
+            <skill>
+                <!--Optional:-->
+                <description>?</description>
+                <!--Optional:-->
+                <id>?</id>
+                <!--Optional:-->
+                <messageOfTheDay>?</messageOfTheDay>
+                <!--Optional:-->
+                <name>?</name>
+                <!--Optional:-->
+                <routeVoiceMails>?</routeVoiceMails>
+            </skill>
+        </ser:modifySkill>
+    </soapenv:Body>
+</soapenv:Envelope>

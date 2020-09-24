@@ -1,0 +1,63 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:modifyWebConnector>
+            <!--Optional:-->
+            <connector>
+                <!--Optional:-->
+                <addWorksheet>?</addWorksheet>
+                <!--Optional:-->
+                <agentApplication>?</agentApplication>
+                <!--Optional:-->
+                <clearTriggerDispositions>?</clearTriggerDispositions>
+                <!--Zero or more repetitions:-->
+                <constants>
+                    <!--Optional:-->
+                    <key>?</key>
+                    <!--Optional:-->
+                    <value>?</value>
+                </constants>
+                <!--Optional:-->
+                <ctiWebServices>?</ctiWebServices>
+                <!--Optional:-->
+                <description>?</description>
+                <!--Optional:-->
+                <executeInBrowser>?</executeInBrowser>
+                <!--Optional:-->
+                <name>?</name>
+                <!--Zero or more repetitions:-->
+                <postConstants>
+                    <!--Optional:-->
+                    <key>?</key>
+                    <!--Optional:-->
+                    <value>?</value>
+                </postConstants>
+                <!--Optional:-->
+                <postMethod>?</postMethod>
+                <!--Zero or more repetitions:-->
+                <postVariables>
+                    <!--Optional:-->
+                    <key>?</key>
+                    <!--Optional:-->
+                    <value>?</value>
+                </postVariables>
+                <!--Optional:-->
+                <startPageText>?</startPageText>
+                <!--Optional:-->
+                <trigger>?</trigger>
+                <!--Zero or more repetitions:-->
+                <triggerDispositions>?</triggerDispositions>
+                <!--Optional:-->
+                <url>?</url>
+                <!--Zero or more repetitions:-->
+                <variables>
+                    <!--Optional:-->
+                    <key>?</key>
+                    <!--Optional:-->
+                    <value>?</value>
+                </variables>
+            </connector>
+        </ser:modifyWebConnector>
+    </soapenv:Body>
+</soapenv:Envelope>

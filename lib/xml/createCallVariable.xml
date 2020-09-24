@@ -1,0 +1,36 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:createCallVariable>
+            <!--Optional:-->
+            <variable>
+                <!--Optional:-->
+                <applyToAllDispositions>?</applyToAllDispositions>
+                <!--Optional:-->
+                <defaultValue>?</defaultValue>
+                <!--Optional:-->
+                <description>?</description>
+                <!--Zero or more repetitions:-->
+                <dispositions>?</dispositions>
+                <!--Optional:-->
+                <group>?</group>
+                <!--Optional:-->
+                <name>?</name>
+                <!--Optional:-->
+                <reporting>?</reporting>
+                <!--Zero or more repetitions:-->
+                <restrictions>
+                    <!--Optional:-->
+                    <type>?</type>
+                    <!--Optional:-->
+                    <value>?</value>
+                </restrictions>
+                <!--Optional:-->
+                <sensitiveData>?</sensitiveData>
+                <!--Optional:-->
+                <type>?</type>
+            </variable>
+        </ser:createCallVariable>
+    </soapenv:Body>
+</soapenv:Envelope>
