@@ -1,0 +1,35 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ser="http://service.admin.ws.five9.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ser:modifyCampaignProfileCrmCriteria>
+            <!--Optional:-->
+            <profileName>?</profileName>
+            <!--Optional:-->
+            <grouping>
+                <!--Optional:-->
+                <expression>?</expression>
+                <!--Optional:-->
+                <type>?</type>
+            </grouping>
+            <!--Zero or more repetitions:-->
+            <addCriteria>
+                <!--Optional:-->
+                <compareOperator>?</compareOperator>
+                <!--Optional:-->
+                <leftValue>?</leftValue>
+                <!--Optional:-->
+                <rightValue>?</rightValue>
+            </addCriteria>
+            <!--Zero or more repetitions:-->
+            <removeCriteria>
+                <!--Optional:-->
+                <compareOperator>?</compareOperator>
+                <!--Optional:-->
+                <leftValue>?</leftValue>
+                <!--Optional:-->
+                <rightValue>?</rightValue>
+            </removeCriteria>
+        </ser:modifyCampaignProfileCrmCriteria>
+    </soapenv:Body>
+</soapenv:Envelope>

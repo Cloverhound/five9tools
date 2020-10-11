@@ -29,5 +29,60 @@ module Five9Tools
       end
       acc
     end
+
+    def easy_create_outbound_campaign(campaign_name)
+      message = {
+        campaign: {
+          description: campaign_name,
+          name: campaign_name,
+          callWrapup: {
+            enabled: "false",
+          },
+          dnisAsAni: "true",
+          listDialingMode: "PREVIEW",
+          maxPreviewTime: {
+            days: 0,
+            hours: 0,
+            minutes: 0,
+            seconds: 5,
+          },
+          actionOnAnswerMachine: {
+            actionType: "DROP_CALL",
+            maxWaitTime: {
+              days: 0,
+              hours: 0,
+              minutes: 0,
+              seconds: 5,
+            },
+          },
+          actionOnQueueExpiration: {
+            actionType: "DROP_CALL",
+            maxWaitTime: {
+              days: 0,
+              hours: 0,
+              minutes: 0,
+              seconds: 5,
+            },
+          },
+          callAnalysisMode: "NO_ANALYSIS",
+        },
+      }
+      res = self.client.call(:create_outbound_campaign, message: message).body
+      ap res
+      res
+    end
+
+    def easy_create_campaign_profile(campaign_profile_name, ani)
+      message = {
+        campaignProfile: {
+          "ANI" => ani,
+          name: campaign_profile_name,
+          description: campaign_profile_name,
+        },
+      }
+      res = self.client.call(:create_campaign_profile, message: message).body
+      ap res
+      res
+    end
   end
 end

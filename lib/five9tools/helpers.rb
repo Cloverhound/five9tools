@@ -22,14 +22,9 @@ module Five9Tools
       Base64.encode64(data)
     end
 
-    def extract_json_from_text(text, index = 0)
-      json_re = /\{(?:[^{}]|\g<0>)*\}|\[(?:[^{}]|\g<0>)*\]/m
-      res = text.scan(json_re)
-      if res.length() > 1
-        res.map { |v| JSON.parse(v) }[index].to_json
-      else
-        JSON.parse(res[0]).to_json
-      end
+    def get_json_from_text(text, index_json_to_return=0)
+      json_re = /[\[{](?>[^\[\]{}]+|\g<0>?)*[\]}]/m
+      text.scan(json_re)[index_json_to_return]
     end
 
     def gunzip(text)
@@ -39,7 +34,7 @@ module Five9Tools
 
     def gzip(text)
       gz = Zlib::GzipWriter.new(StringIO.new)
-      gz << data
+      gz << text
       gz.close.string
     end
 

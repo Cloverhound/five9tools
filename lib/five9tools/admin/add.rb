@@ -4,20 +4,6 @@ module Five9Tools
 
     public
 
-    #     <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.admin.ws.five9.com/">
-    #    <soapenv:Header/>
-    #    <soapenv:Body>
-    #       <ser:addDispositionsToCampaign>
-    #          <!--Optional:-->
-    #          <campaignName>?</campaignName>
-    #          <!--Zero or more repetitions:-->
-    #          <dispositions>?</dispositions>
-    #          <!--Optional:-->
-    #          <isSkipPreviewDisposition>?</isSkipPreviewDisposition>
-    #       </ser:addDispositionsToCampaign>
-    #    </soapenv:Body>
-    # </soapenv:Envelope>
-
     def add_dispositions_to_campaign(campaign_name = "", dispositions = [])
       message = {
         campaignName: campaign_name,

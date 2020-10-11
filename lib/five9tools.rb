@@ -12,6 +12,7 @@ require "zlib"
 require "stringio"
 require "yard"
 require "active_support/core_ext/hash"
+require "active_support"
 
 # require "five9tools/version"
 require_relative "five9tools/admin/admin_utils"

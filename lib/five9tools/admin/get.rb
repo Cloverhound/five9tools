@@ -4,8 +4,8 @@ module Five9Tools
 
     public
 
-    def get_campaign_profiles()
-      res = self.call(:get_campaign_profiles)
+    def get_campaign_profiles(name_pattern = "")
+      res = if name_pattern == "" then self.client.call(:get_campaign_profiles) else self.client.call(:get_campaign_profiles, message: { namePattern: name_pattern }) end
       res.body[:get_campaign_profiles_response][:return]
     end
 

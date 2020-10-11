@@ -13,7 +13,7 @@ module Five9Tools
       end
     end
 
-    def write_csv_of_ivr_function_json_to_file(ivr_script, function, output_file_path, options = { bracket_index_of_json: 0 })
+    def write_csv_of_ivr_function_json_to_file(ivr_script, function, output_file_path, options = { json_match_index: 0 })
       begin
         csv_data = self.get_function_json(ivr_script, function, format: "csv")
         File.open(output_file_path, "w+") { |f| f.write csv_data }

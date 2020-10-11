@@ -20,10 +20,35 @@ module Five9Tools
       res.body
     end
 
-    def get_function_json(ivr_script_name, function_name, options = { bracket_index_of_json: 0, format: "json" })
+    def convert_new_function_data_to_json(new_data, data_type)
+      case data_type
+      when "csv"
+        Five9Tools::Helpers::csv_to_json new_data
+      when "json"
+        new_data
+      when "hash"
+        new_data.to_json
+      else
+        raise StandardError.new "Unacceptable Format #{data_type}"
+      end
+    end
+
+    def replace_function_json(ivr_script_name, function_name, new_data, options = { json_match_index: 0, format: "json" })
+      ivr_script = self.get_ivr_script(ivr_script_name)
+      function_contents = self.get_function_contents(ivr_script_name, function_name, false)
+      decoded_function_contents = self.get_function_contents(ivr_script_name, function_name, true)
+      function_json = self.get_function_json(ivr_script_name, function_name, options)
+      data_to_insert = self.convert_new_function_data_to_json(new_data, options[:format])
+      new_function_contents = decoded_function_contents.gsub(function_json, data_to_insert)
+      encoded_new_function_contents = Five9Tools::Helpers.encode_ivr_script_function(new_function_contents)
+      new_ivr_script_contents = ivr_script.gsub(function_contents, encoded_new_function_contents)
+      self.replace_ivr_script(ivr_script_name, new_ivr_script_contents)
+    end
+
+    def get_function_json(ivr_script_name, function_name, options = { json_match_index: 0, format: "json" })
       puts "parameters provided: #{{ ivr_script_name: ivr_script_name, function_name: function_name, options: options }}"
-      function_contents = self.get_function_contents(ivr_script_name, function_name)
-      function_json_data = self.get_json_from_function(function_contents, options[:bracket_index_of_json])
+      function_contents = Five9Tools::Helpers.decode_ivr_script_function(self.get_function_contents(ivr_script_name, function_name))
+      function_json_data = self.get_json_from_function(function_contents, options[:json_match_index])
       case options[:format]
       when "csv"
         Five9Tools::Helpers::json_to_csv function_json_data
@@ -36,15 +61,15 @@ module Five9Tools
       end
     end
 
-    def get_function_contents(ivr_script_name, function_name)
+    def get_function_contents(ivr_script_name, function_name, decode = false)
       ivr_xml_data = self.get_ivr_script(ivr_script_name)
       doc = Nokogiri::XML ivr_xml_data
       f = doc.at_xpath("//functions//entry//value[name=\'#{function_name}\']//functionBody").text
-      Five9Tools::Helpers::decode_ivr_script_function(f)
+      if decode then Five9Tools::Helpers::decode_ivr_script_function(f) else f end
     end
 
-    def get_json_from_function(function_contents, bracket_index_of_json = 0)
-      Five9Tools::Helpers.extract_json_from_text(function_contents, bracket_index_of_json)
+    def get_json_from_function(function_contents, json_match_index = 0)
+      Five9Tools::Helpers.get_json_from_text(function_contents, json_match_index)
     end
 
     def get_last_id(xml_string, module_name_of_node, xpath_of_id)
@@ -177,15 +202,6 @@ module Five9Tools
     def write_ivr_to_file(file_name, doc)
       new_file_name = File.join(File.dirname(file_name), "#{File.basename(file_name).split(".").first}_autogen.five9ivr")
       File.open(new_file_name, "w") { |f| f.write(doc.to_xml) }
-    end
-
-    def test
-      ivr_xml_file = "/Users/zsherbondy/desktop/temp/JG DS DNIS Check.five9ivr"
-      module_name_of_node = "DNIS?"
-      xml_string = File.read(ivr_xml_file)
-      ivr_update_hash = Five9Tools::Helpers.csv_to_hash_arr("/Users/zsherbondy/desktop/temp/cases.csv")
-      doc = generate_modified_xml(xml_string, module_name_of_node, ivr_update_hash)
-      write_ivr_to_file(ivr_xml_file, doc)
     end
 
     def get_ivr_update_hash

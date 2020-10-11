@@ -2,7 +2,7 @@
     xmlns:ser="http://service.admin.ws.five9.com/">
     <soapenv:Header/>
     <soapenv:Body>
-        <ser:isImportRunning.>
+        <ser:isImportRunning>
             <!--Optional:-->
             <identifier>
                 <!--Optional:-->

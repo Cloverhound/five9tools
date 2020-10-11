@@ -13,7 +13,7 @@ JSON_PATTERNS = {
 describe "json extracter" do
   it "captures flat json" do
     v = JSON_PATTERNS[:flat]
-    extracted_json = Five9Tools::Helpers::extract_json_from_text(v)
+    extracted_json = Five9Tools::Helpers::get_json_from_text(v)
     puts v.inspect
     puts extracted_json.inspect
     jsn = JSON.parse(extracted_json)
@@ -21,7 +21,7 @@ describe "json extracter" do
   end
   it "captures nested json" do
     v = JSON_PATTERNS[:nested]
-    extracted_json = Five9Tools::Helpers::extract_json_from_text(v)
+    extracted_json = Five9Tools::Helpers::get_json_from_text(v)
     puts v.inspect
     puts extracted_json.inspect
     jsn = JSON.parse(extracted_json)
@@ -29,7 +29,7 @@ describe "json extracter" do
   end
   it "captures array json" do
     v = JSON_PATTERNS[:array]
-    extracted_json = Five9Tools::Helpers::extract_json_from_text(v)
+    extracted_json = Five9Tools::Helpers::get_json_from_text(v)
     puts v.inspect
     puts extracted_json.inspect
     jsn = JSON.parse(extracted_json)
