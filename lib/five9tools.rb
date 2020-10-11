@@ -10,7 +10,6 @@ require "json"
 require "htmlentities"
 require "zlib"
 require "stringio"
-require "yard"
 require "active_support/core_ext/hash"
 require "active_support"
 
