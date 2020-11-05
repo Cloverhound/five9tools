@@ -48,7 +48,10 @@ def generate_code_for_request_hash(request_hash)
     #   #{params}
 
     def #{operation.underscore} (params={})
-      self.call(#{operation.underscore.to_sym}, message: params)
+      if params.is_a?(Hash)
+        self.call(#{operation.underscore.to_sym}, message: params)
+      else
+        \"Implement something using #{params}"
     end
     "
   rescue => e

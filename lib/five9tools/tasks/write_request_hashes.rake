@@ -32,7 +32,7 @@ namespace :files do
     request_hashes.each { |req, prms|
       operation_name = req
       code = generate_code_for_request_hash({ req => prms })
-      file_name = "admin_code_gen/"
+      file_name = "lib/admin_code_gen/"
       case true
       when operation_name.match?(/get.*/i)
         file_name += "get.rb"
@@ -88,9 +88,12 @@ def generate_code_for_request_hash(request_hash)
     #   #{params}
 
     def #{operation.underscore} (params={})
-      self.call(:#{operation.underscore}, message: params).body
-    end
-    "
+      if params.is_a?(Hash)
+        self.call(:#{operation.underscore}, message: params)
+      else
+        \"Implement something for simple use case\"
+      end
+    end"
   rescue => e
     "#{e.to_s}"
   end
