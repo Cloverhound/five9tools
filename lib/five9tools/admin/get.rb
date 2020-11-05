@@ -79,7 +79,21 @@ module Five9Tools
     #Api request for getUserInfo.
     # @example Accepts the following parameters as a hash:
     #   {"getUserInfo"=>{"userName"=>"?"}}
-
+    #   c.get_user_info(userName: "zach.sherbondy@cloverhound.com")
+    #   {
+    #     :get_user_info_response => {
+    #       :return => {
+    #     :agent_groups => [
+    #         [0] "CH Admin",
+    #         [1] "CH Agent"
+    #     ],
+    #     :general_info => {
+    #                       :active => true,
+    #          :can_change_password => true,
+    #                       :e_mail => "zsherbondy@cloverhound.com",
+    #                    :extension => "0005",
+    #                   :first_name => "Zach",
+    #                    :full_name => "Zach Sherbondy", ...}}
     def get_user_info(params = {})
       self.call(:get_user_info, message: params)
     end

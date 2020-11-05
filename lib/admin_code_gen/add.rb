@@ -81,7 +81,7 @@ end
 #Api request for userSkillAdd.
 # @example Accepts the following parameters as a hash:
 #   {"userSkillAdd"=>{"userSkill"=>{"id"=>"?", "level"=>"?", "skillName"=>"?", "userName"=>"?"}}}
-
+#   c.user_skill_add({userSkillAdd: {userSkill: {userName: "zach.sherbondy@cloverhound.com", skillName: "SD Regional Voice", level: "1"}}})
 def user_skill_add(params = {})
   self.call(user_skill_add, message: params)
 end

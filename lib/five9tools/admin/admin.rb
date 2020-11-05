@@ -69,58 +69,6 @@ module Five9Tools
         @client.call(operation, params).body
       end
 
-      def write_new_skill_to_users(skills_to_add, user_csv)
-        hash_arr = Five9Tools::Helpers::csv_to_hash_arr_2(user_csv, 0, 1)
-        acc = {}
-        hash_arr.each do |h|
-          h.each do |username, skills|
-            acc[username] = { "username" => username }
-            skills_to_add.each do |matcher, skill_to_add|
-              if skills.include?(matcher) then append_always(acc[username], "skills", skill_to_add) end
-            end
-          end
-        end
-        acc
-      end
-
-      def modify_user(message)
-        @client.call(:modify_user, :message => message)
-      end
-
-      # @example Add a skill to a user
-      #   c.user_skill_add("zach.sherbondy@cloverhound.com", "SD Regional Voice")
-      def user_skill_add(username, skill)
-        message = {
-          :userSkill => {
-            level: "1",
-            skillName: skill,
-            userName: username,
-          },
-        }
-        ap message
-        @client.call(:user_skill_add, :message => message)
-      end
-
-      # @example Get all details about a specific Five9 user
-      #   c.get_user_info("zach.sherbondy@cloverhound.com")
-      #   {
-      #     :get_user_info_response => {
-      #       :return => {
-      #     :agent_groups => [
-      #         [0] "CH Admin",
-      #         [1] "CH Agent"
-      #     ],
-      #     :general_info => {
-      #                       :active => true,
-      #          :can_change_password => true,
-      #                       :e_mail => "zsherbondy@cloverhound.com",
-      #                    :extension => "0005",
-      #                   :first_name => "Zach",
-      #                    :full_name => "Zach Sherbondy", ...}}
-      def get_user_info(username)
-        @client.call(:get_user_info, message: { userName: username })
-      end
-
       def start_campaign_safely(campaign, number)
         #needs a dnis NUMBER to assign to campaign, since five9 only lets you start campaigns that have a dnis
         begin
