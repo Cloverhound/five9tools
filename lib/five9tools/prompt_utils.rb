@@ -58,12 +58,12 @@ module Five9Tools
     def safely_upload_prompt(message)
       begin
         puts "Attempting to add prompt #{message[:prompt][:name]} to the system".yellow
-        self.client.call(:add_prompt_wav_inline, :message => message)
+        self.call(:add_prompt_wav_inline, :message => message)
       rescue => exception
         puts "#{exception} \n\n Replacing wav instead".cyan
         begin
-          self.client.call(:delete_prompt, :message => { :promptName => message[:prompt][:name] })
-          self.client.call(:add_prompt_wav_inline, :message => message)
+          self.call(:delete_prompt, :message => { :promptName => message[:prompt][:name] })
+          self.call(:add_prompt_wav_inline, :message => message)
         rescue => exception
           puts exception
           raise UploadFailureError
@@ -95,12 +95,12 @@ module Five9Tools
     def safely_modify_prompt(message)
       begin
         puts "Attempting to add prompt #{message[:prompt][:name]} to the system".yellow
-        self.client.call(:modify_prompt_wav_inline, :message => message)
+        self.call(:modify_prompt_wav_inline, :message => message)
       rescue => exception
         puts "#{exception} \n\n Replacing wav language".cyan
         begin
-          self.client.call(:delete_language_prompt, :message => { :promptName => message[:prompt][:name], :language => message[:prompt][:languages] })
-          self.client.call(:add_prompt_wav_inline, :message => message)
+          self.call(:delete_language_prompt, :message => { :promptName => message[:prompt][:name], :language => message[:prompt][:languages] })
+          self.call(:add_prompt_wav_inline, :message => message)
         rescue => exception
           puts exception
           raise UploadFailureError
@@ -116,14 +116,14 @@ module Five9Tools
       }
       begin
         puts "Attempting to delete prompt language #{lang_code_id} for prompt #{file_name}".yellow
-        self.client.call(:delete_language_prompt, :message => message)
+        self.call(:delete_language_prompt, :message => message)
       rescue => exception
         puts "There was no need to delete the prompt", exception
       end
     end
 
     def get_prompts
-      self.client.call(:get_prompts)
+      self.call(:get_prompts)
     end
   end
 end

@@ -14,6 +14,7 @@ require "active_support/core_ext/hash"
 require "active_support"
 
 # require "five9tools/version"
+require_relative "five9tools/admin/definitions"
 require_relative "five9tools/admin/admin_utils"
 require_relative "five9tools/prompt_utils"
 require_relative "five9tools/ivr_utils"

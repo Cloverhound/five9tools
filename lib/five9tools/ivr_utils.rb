@@ -5,7 +5,7 @@ module Five9Tools
     public
 
     def get_ivr_scripts
-      ivr_scripts = self.client.call(:get_ivr_scripts)
+      ivr_scripts = self.call(:get_ivr_scripts)
       ivr_scripts.body[:get_ivr_scripts_response][:return]
     end
 
@@ -16,7 +16,7 @@ module Five9Tools
           :xmlDefinition => ivr_script_contents,
         },
       }
-      res = self.client.call(:modify_ivr_script, :message => message)
+      res = self.call(:modify_ivr_script, :message => message)
       res.body
     end
 

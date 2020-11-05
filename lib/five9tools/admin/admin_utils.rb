@@ -5,7 +5,7 @@ module Five9Tools
     public
 
     def start_all_campaigns_safely(did)
-      campaigns = self.client.call(:get_campaigns).body[:get_campaigns_response][:return]
+      campaigns = self.call(:get_campaigns).body[:get_campaigns_response][:return]
       case campaigns
       when Hash
         self.start_campaign_safely(campaigns[:name], did)
@@ -67,7 +67,7 @@ module Five9Tools
           callAnalysisMode: "NO_ANALYSIS",
         },
       }
-      res = self.client.call(:create_outbound_campaign, message: message).body
+      res = self.call(:create_outbound_campaign, message: message).body
       ap res
       res
     end
@@ -80,7 +80,7 @@ module Five9Tools
           description: campaign_profile_name,
         },
       }
-      res = self.client.call(:create_campaign_profile, message: message).body
+      res = self.call(:create_campaign_profile, message: message).body
       ap res
       res
     end

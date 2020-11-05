@@ -39,6 +39,7 @@ module Five9Tools
       include Five9Tools::Misc
       include Five9Tools::Remove
       include Five9Tools::Update
+      include Five9Tools::Definitions
 
       #Savon is used to create a SOAP client that reaches out to the Five9 WSDL file
       # @example Create a new Five9 Admin Client so you can bulk change and query Five9 systems with ease.
@@ -62,6 +63,10 @@ module Five9Tools
       #   c.client.call(:get_users_info)
       def client
         @client
+      end
+
+      def call(operation, params)
+        @client.call(operation, params).body
       end
 
       def write_new_skill_to_users(skills_to_add, user_csv)
