@@ -9,7 +9,11 @@ module Five9Tools
     #   {"getCampaignState"=>{"campaignName"=>"?", "waitUntilChange"=>"?"}}
 
     def get_campaign_state(params = {})
-      self.call(:get_campaign_state, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_campaign_state, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getCampaignProfiles.
@@ -17,7 +21,11 @@ module Five9Tools
     #   {"getCampaignProfiles"=>{"namePattern"=>"?"}}
 
     def get_campaign_profiles(params = {})
-      self.call(:get_campaign_profiles, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_campaign_profiles, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getUsersInfo.
@@ -25,7 +33,11 @@ module Five9Tools
     #   {"getUsersInfo"=>{"userNamePattern"=>"?"}}
 
     def get_users_info(params = {})
-      self.call(:get_users_info, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_users_info, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getIvrScriptOwnership.
@@ -33,7 +45,11 @@ module Five9Tools
     #   {"getIvrScriptOwnership"=>{"ivrScriptName"=>"?"}}
 
     def get_ivr_script_ownership(params = {})
-      self.call(:get_ivr_script_ownership, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_ivr_script_ownership, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getSkill.
@@ -41,7 +57,11 @@ module Five9Tools
     #   {"getSkill"=>{"skillName"=>"?"}}
 
     def get_skill(params = {})
-      self.call(:get_skill, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_skill, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getPrompt.
@@ -49,7 +69,11 @@ module Five9Tools
     #   {"getPrompt"=>{"promptName"=>"?"}}
 
     def get_prompt(params = {})
-      self.call(:get_prompt, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_prompt, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getUsersGeneralInfo.
@@ -57,7 +81,11 @@ module Five9Tools
     #   {"getUsersGeneralInfo"=>{"userNamePattern"=>"?"}}
 
     def get_users_general_info(params = {})
-      self.call(:get_users_general_info, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_users_general_info, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getCampaignProfileFilter.
@@ -65,7 +93,11 @@ module Five9Tools
     #   {"getCampaignProfileFilter"=>{"profileName"=>"?"}}
 
     def get_campaign_profile_filter(params = {})
-      self.call(:get_campaign_profile_filter, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_campaign_profile_filter, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getDisposition.
@@ -73,29 +105,23 @@ module Five9Tools
     #   {"getDisposition"=>{"dispositionName"=>"?"}}
 
     def get_disposition(params = {})
-      self.call(:get_disposition, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_disposition, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getUserInfo.
     # @example Accepts the following parameters as a hash:
     #   {"getUserInfo"=>{"userName"=>"?"}}
-    #   c.get_user_info(userName: "zach.sherbondy@cloverhound.com")
-    #   {
-    #     :get_user_info_response => {
-    #       :return => {
-    #     :agent_groups => [
-    #         [0] "CH Admin",
-    #         [1] "CH Agent"
-    #     ],
-    #     :general_info => {
-    #                       :active => true,
-    #          :can_change_password => true,
-    #                       :e_mail => "zsherbondy@cloverhound.com",
-    #                    :extension => "0005",
-    #                   :first_name => "Zach",
-    #                    :full_name => "Zach Sherbondy", ...}}
+
     def get_user_info(params = {})
-      self.call(:get_user_info, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_user_info, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getUserProfile.
@@ -103,7 +129,11 @@ module Five9Tools
     #   {"getUserProfile"=>{"userProfileName"=>"?"}}
 
     def get_user_profile(params = {})
-      self.call(:get_user_profile, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_user_profile, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getDialingRules.
@@ -111,7 +141,11 @@ module Five9Tools
     #   {"getDialingRules"=>{"namePattern"=>"?"}}
 
     def get_dialing_rules(params = {})
-      self.call(:get_dialing_rules, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_dialing_rules, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getDispositions.
@@ -119,7 +153,11 @@ module Five9Tools
     #   {"getDispositions"=>{"dispositionNamePattern"=>"?"}}
 
     def get_dispositions(params = {})
-      self.call(:get_dispositions, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_dispositions, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getConfigurationTranslations.
@@ -127,7 +165,11 @@ module Five9Tools
     #   {"getConfigurationTranslations"=>{"localeName"=>"?"}}
 
     def get_configuration_translations(params = {})
-      self.call(:get_configuration_translations, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_configuration_translations, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getAutodialCampaign.
@@ -135,7 +177,11 @@ module Five9Tools
     #   {"getAutodialCampaign"=>{"campaignName"=>"?"}}
 
     def get_autodial_campaign(params = {})
-      self.call(:get_autodial_campaign, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_autodial_campaign, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getCrmImportResult.
@@ -143,7 +189,11 @@ module Five9Tools
     #   {"getCrmImportResult"=>{"identifier"=>{"identifier"=>"?"}}}
 
     def get_crm_import_result(params = {})
-      self.call(:get_crm_import_result, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_crm_import_result, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getCallVariables.
@@ -151,7 +201,11 @@ module Five9Tools
     #   {"getCallVariables"=>{"namePattern"=>"?", "groupName"=>"?"}}
 
     def get_call_variables(params = {})
-      self.call(:get_call_variables, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_call_variables, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getAgentGroups.
@@ -159,7 +213,11 @@ module Five9Tools
     #   {"getAgentGroups"=>{"groupNamePattern"=>"?"}}
 
     def get_agent_groups(params = {})
-      self.call(:get_agent_groups, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_agent_groups, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getInboundCampaign.
@@ -167,7 +225,11 @@ module Five9Tools
     #   {"getInboundCampaign"=>{"campaignName"=>"?"}}
 
     def get_inbound_campaign(params = {})
-      self.call(:get_inbound_campaign, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_inbound_campaign, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getSkillVoicemailGreeting.
@@ -175,7 +237,11 @@ module Five9Tools
     #   {"getSkillVoicemailGreeting"=>{"skillName"=>"?"}}
 
     def get_skill_voicemail_greeting(params = {})
-      self.call(:get_skill_voicemail_greeting, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_skill_voicemail_greeting, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getListsInfo.
@@ -183,7 +249,11 @@ module Five9Tools
     #   {"getListsInfo"=>{"listNamePattern"=>"?"}}
 
     def get_lists_info(params = {})
-      self.call(:get_lists_info, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_lists_info, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getUserProfiles.
@@ -191,7 +261,11 @@ module Five9Tools
     #   {"getUserProfiles"=>{"userProfileNamePatern"=>"?"}}
 
     def get_user_profiles(params = {})
-      self.call(:get_user_profiles, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_user_profiles, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getSkillAudioFiles.
@@ -199,7 +273,11 @@ module Five9Tools
     #   {"getSkillAudioFiles"=>{"skillName"=>"?"}}
 
     def get_skill_audio_files(params = {})
-      self.call(:get_skill_audio_files, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_skill_audio_files, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getUserVoicemailGreeting.
@@ -207,7 +285,11 @@ module Five9Tools
     #   {"getUserVoicemailGreeting"=>{"userName"=>"?"}}
 
     def get_user_voicemail_greeting(params = {})
-      self.call(:get_user_voicemail_greeting, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_user_voicemail_greeting, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getCampaignProfileDispositions.
@@ -215,7 +297,11 @@ module Five9Tools
     #   {"getCampaignProfileDispositions"=>{"profileName"=>"?"}}
 
     def get_campaign_profile_dispositions(params = {})
-      self.call(:get_campaign_profile_dispositions, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_campaign_profile_dispositions, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getContactFields.
@@ -223,7 +309,11 @@ module Five9Tools
     #   {"getContactFields"=>{"namePattern"=>"?"}}
 
     def get_contact_fields(params = {})
-      self.call(:get_contact_fields, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_contact_fields, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getSkillsInfo.
@@ -231,7 +321,11 @@ module Five9Tools
     #   {"getSkillsInfo"=>{"skillNamePattern"=>"?"}}
 
     def get_skills_info(params = {})
-      self.call(:get_skills_info, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_skills_info, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getVCCConfiguration.
@@ -239,7 +333,11 @@ module Five9Tools
     #   {"getVCCConfiguration"=>nil}
 
     def get_vcc_configuration(params = {})
-      self.call(:get_vcc_configuration, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_vcc_configuration, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getOutboundCampaign.
@@ -247,7 +345,11 @@ module Five9Tools
     #   {"getOutboundCampaign"=>{"campaignName"=>"?"}}
 
     def get_outbound_campaign(params = {})
-      self.call(:get_outbound_campaign, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_outbound_campaign, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getWebConnectors.
@@ -255,7 +357,11 @@ module Five9Tools
     #   {"getWebConnectors"=>{"namePattern"=>"?"}}
 
     def get_web_connectors(params = {})
-      self.call(:get_web_connectors, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_web_connectors, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getReasonCode.
@@ -263,7 +369,11 @@ module Five9Tools
     #   {"getReasonCode"=>{"reasonCodeName"=>"?"}}
 
     def get_reason_code(params = {})
-      self.call(:get_reason_code, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_reason_code, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getCampaigns.
@@ -271,7 +381,11 @@ module Five9Tools
     #   {"getCampaigns"=>{"campaignNamePattern"=>"?", "campaignType"=>"?"}}
 
     def get_campaigns(params = {})
-      self.call(:get_campaigns, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_campaigns, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getDispositionsImportResult.
@@ -279,7 +393,11 @@ module Five9Tools
     #   {"getDispositionsImportResult"=>{"identifier"=>{"identifier"=>"?"}}}
 
     def get_dispositions_import_result(params = {})
-      self.call(:get_dispositions_import_result, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_dispositions_import_result, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getReasonCodeByType.
@@ -287,7 +405,11 @@ module Five9Tools
     #   {"getReasonCodeByType"=>{"reasonCodeName"=>"?", "type"=>"?"}}
 
     def get_reason_code_by_type(params = {})
-      self.call(:get_reason_code_by_type, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_reason_code_by_type, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getSkillInfo.
@@ -295,7 +417,11 @@ module Five9Tools
     #   {"getSkillInfo"=>{"skillName"=>"?"}}
 
     def get_skill_info(params = {})
-      self.call(:get_skill_info, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_skill_info, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getDNISList.
@@ -303,7 +429,11 @@ module Five9Tools
     #   {"getDNISList"=>{"selectUnassigned"=>"?"}}
 
     def get_dnis_list(params = {})
-      self.call(:get_dnis_list, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_dnis_list, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getListsForCampaign.
@@ -311,7 +441,11 @@ module Five9Tools
     #   {"getListsForCampaign"=>{"campaignName"=>"?"}}
 
     def get_lists_for_campaign(params = {})
-      self.call(:get_lists_for_campaign, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_lists_for_campaign, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getCampaignStrategies.
@@ -319,7 +453,11 @@ module Five9Tools
     #   {"getCampaignStrategies"=>{"campaignName"=>"?"}}
 
     def get_campaign_strategies(params = {})
-      self.call(:get_campaign_strategies, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_campaign_strategies, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getUserGeneralInfo.
@@ -327,7 +465,11 @@ module Five9Tools
     #   {"getUserGeneralInfo"=>{"userName"=>"?"}}
 
     def get_user_general_info(params = {})
-      self.call(:get_user_general_info, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_user_general_info, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getIvrIcons.
@@ -335,7 +477,11 @@ module Five9Tools
     #   {"getIvrIcons"=>{"ivrScriptName"=>"?"}}
 
     def get_ivr_icons(params = {})
-      self.call(:get_ivr_icons, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_ivr_icons, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getCallCountersState.
@@ -343,7 +489,11 @@ module Five9Tools
     #   {"getCallCountersState"=>nil}
 
     def get_call_counters_state(params = {})
-      self.call(:get_call_counters_state, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_call_counters_state, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getIVRScripts.
@@ -351,7 +501,11 @@ module Five9Tools
     #   {"getIVRScripts"=>{"namePattern"=>"?"}}
 
     def get_ivr_scripts(params = {})
-      self.call(:get_ivr_scripts, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_ivr_scripts, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getReportResultCsv.
@@ -359,7 +513,11 @@ module Five9Tools
     #   {"getReportResultCsv"=>{"identifier"=>"?"}}
 
     def get_report_result_csv(params = {})
-      self.call(:get_report_result_csv, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_report_result_csv, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getCampaignDNISList.
@@ -367,7 +525,11 @@ module Five9Tools
     #   {"getCampaignDNISList"=>{"campaignName"=>"?"}}
 
     def get_campaign_dnis_list(params = {})
-      self.call(:get_campaign_dnis_list, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_campaign_dnis_list, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getSkills.
@@ -375,7 +537,11 @@ module Five9Tools
     #   {"getSkills"=>{"skillNamePattern"=>"?"}}
 
     def get_skills(params = {})
-      self.call(:get_skills, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_skills, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getListImportResult.
@@ -383,7 +549,11 @@ module Five9Tools
     #   {"getListImportResult"=>{"identifier"=>{"identifier"=>"?"}}}
 
     def get_list_import_result(params = {})
-      self.call(:get_list_import_result, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_list_import_result, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getApiVersions.
@@ -391,7 +561,11 @@ module Five9Tools
     #   {"getApiVersions"=>nil}
 
     def get_api_versions(params = {})
-      self.call(:get_api_versions, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_api_versions, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getLocale.
@@ -399,7 +573,11 @@ module Five9Tools
     #   {"getLocale"=>nil}
 
     def get_locale(params = {})
-      self.call(:get_locale, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_locale, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getAvailableLocales.
@@ -407,7 +585,11 @@ module Five9Tools
     #   {"getAvailableLocales"=>nil}
 
     def get_available_locales(params = {})
-      self.call(:get_available_locales, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_available_locales, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getSpeedDialNumbers.
@@ -415,7 +597,11 @@ module Five9Tools
     #   {"getSpeedDialNumbers"=>nil}
 
     def get_speed_dial_numbers(params = {})
-      self.call(:get_speed_dial_numbers, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_speed_dial_numbers, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getPrompts.
@@ -423,7 +609,11 @@ module Five9Tools
     #   {"getPrompts"=>nil}
 
     def get_prompts(params = {})
-      self.call(:get_prompts, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_prompts, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getAgentGroup.
@@ -431,7 +621,11 @@ module Five9Tools
     #   {"getAgentGroup"=>{"groupName"=>"?"}}
 
     def get_agent_group(params = {})
-      self.call(:get_agent_group, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_agent_group, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getContactRecords.
@@ -439,7 +633,11 @@ module Five9Tools
     #   {"getContactRecords"=>{"lookupCriteria"=>{"contactIdField"=>"?", "criteria"=>{"field"=>"?", "value"=>"?"}}}}
 
     def get_contact_records(params = {})
-      self.call(:get_contact_records, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_contact_records, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getCallVariableGroups.
@@ -447,7 +645,11 @@ module Five9Tools
     #   {"getCallVariableGroups"=>{"namePattern"=>"?"}}
 
     def get_call_variable_groups(params = {})
-      self.call(:get_call_variable_groups, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_call_variable_groups, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for getReportResult.
@@ -455,7 +657,11 @@ module Five9Tools
     #   {"getReportResult"=>{"identifier"=>"?"}}
 
     def get_report_result(params = {})
-      self.call(:get_report_result, message: params)
+      if params.is_a?(Hash)
+        self.call(:get_report_result, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     # def get_campaign_profiles(name_pattern = "")

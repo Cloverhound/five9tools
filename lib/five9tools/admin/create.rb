@@ -2,12 +2,18 @@ module Five9Tools
   module Create
     module_function
 
+    public
+
     #Api request for createIVRScript.
     # @example Accepts the following parameters as a hash:
     #   {"createIVRScript"=>{"name"=>"?"}}
 
     def create_ivr_script(params = {})
-      self.call(:create_ivr_script, message: params)
+      if params.is_a?(Hash)
+        self.call(:create_ivr_script, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for createCallVariable.
@@ -15,7 +21,11 @@ module Five9Tools
     #   {"createCallVariable"=>{"variable"=>{"applyToAllDispositions"=>"?", "defaultValue"=>"?", "description"=>"?", "dispositions"=>"?", "group"=>"?", "name"=>"?", "reporting"=>"?", "restrictions"=>{"type"=>"?", "value"=>"?"}, "sensitiveData"=>"?", "type"=>"?"}}}
 
     def create_call_variable(params = {})
-      self.call(:create_call_variable, message: params)
+      if params.is_a?(Hash)
+        self.call(:create_call_variable, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for createAgentGroup.
@@ -23,7 +33,11 @@ module Five9Tools
     #   {"createAgentGroup"=>{"group"=>{"agents"=>"?", "description"=>"?", "id"=>"?", "name"=>"?"}}}
 
     def create_agent_group(params = {})
-      self.call(:create_agent_group, message: params)
+      if params.is_a?(Hash)
+        self.call(:create_agent_group, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for createAutodialCampaign.
@@ -31,7 +45,11 @@ module Five9Tools
     #   {"createAutodialCampaign"=>{"campaign"=>{"description"=>"?", "mode"=>"?", "name"=>"?", "profileName"=>"?", "state"=>"?", "trainingMode"=>"?", "type"=>"?", "autoRecord"=>"?", "callWrapup"=>{"agentNotReady"=>"?", "dispostionName"=>"?", "enabled"=>"?", "reasonCodeName"=>"?", "timeout"=>{"days"=>"?", "hours"=>"?", "minutes"=>"?", "seconds"=>"?"}}, "ftpHost"=>"?", "ftpPassword"=>"?", "ftpUser"=>"?", "recordingNameAsSid"=>"?", "useFtp"=>"?", "analyzeLevel"=>"?", "CRMRedialTimeout"=>{"days"=>"?", "hours"=>"?", "minutes"=>"?", "seconds"=>"?"}, "dnisAsAni"=>"?", "enableListDialingRatios"=>"?", "listDialingMode"=>"?", "noOutOfNumbersAlert"=>"?", "stateDialingRule"=>"?", "timeZoneAssignment"=>"?", "agentAvailability"=>"?", "agentSkillName"=>"?", "defaultIvrSchedule"=>{"name"=>"?", "scriptName"=>"?", "scriptParameters"=>{"name"=>"?", "value"=>"?"}}, "dialIfAgentsAvailable"=>"?", "maxNumOfLines"=>"?"}}}
 
     def create_autodial_campaign(params = {})
-      self.call(:create_autodial_campaign, message: params)
+      if params.is_a?(Hash)
+        self.call(:create_autodial_campaign, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for createCallVariablesGroup.
@@ -39,7 +57,11 @@ module Five9Tools
     #   {"createCallVariablesGroup"=>{"name"=>"?", "description"=>"?"}}
 
     def create_call_variables_group(params = {})
-      self.call(:create_call_variables_group, message: params)
+      if params.is_a?(Hash)
+        self.call(:create_call_variables_group, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for createReasonCode.
@@ -47,7 +69,11 @@ module Five9Tools
     #   {"createReasonCode"=>{"reasonCode"=>{"enabled"=>"?", "name"=>"?", "paidTime"=>"?", "shortcut"=>"?", "type"=>"?"}}}
 
     def create_reason_code(params = {})
-      self.call(:create_reason_code, message: params)
+      if params.is_a?(Hash)
+        self.call(:create_reason_code, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for createSkill.
@@ -55,7 +81,11 @@ module Five9Tools
     #   {"createSkill"=>{"skillInfo"=>{"skill"=>{"description"=>"?", "id"=>"?", "messageOfTheDay"=>"?", "name"=>"?", "routeVoiceMails"=>"?"}, "users"=>"\n                    \n                    \n                    \n                    \n                    \n                    \n                    \n           e "}}}
 
     def create_skill(params = {})
-      self.call(:create_skill, message: params)
+      if params.is_a?(Hash)
+        self.call(:create_skill, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for createUserProfile.
@@ -63,7 +93,11 @@ module Five9Tools
     #   {"createUserProfile"=>{"userProfile"=>{"description"=>"?", "IEXScheduled"=>"?", "locale"=>"?", "mediaTypeConfig"=>{"mediaTypes"=>{"enabled"=>"?", "intlligentRouting"=>"?", "maxAlowed"=>"?", "type"=>"?"}}, "name"=>"?", "roles"=>{"admin"=>{"permissions"=>{"type"=>"?", "value"=>"?"}}, "agent"=>{"alwaysRecorded"=>"?", "attachVmToEmail"=>"?", "permissions"=>{"type"=>"?", "value"=>"?"}, "sendEmailOnVm"=>"?"}, "crmManager"=>{"permissions"=>{"type"=>"?", "value"=>"?"}}, "reporting"=>{"permissions"=>{"type"=>"?", "value"=>"?"}}, "supervisor"=>{"permissions"=>{"type"=>"?", "value"=>"?"}}}, "skills"=>"?", "users"=>"?"}}}
 
     def create_user_profile(params = {})
-      self.call(:create_user_profile, message: params)
+      if params.is_a?(Hash)
+        self.call(:create_user_profile, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for createDisposition.
@@ -71,7 +105,11 @@ module Five9Tools
     #   {"createDisposition"=>{"disposition"=>{"agentMustCompleteWorksheet"=>"?", "agentMustConfirm"=>"?", "description"=>"?", "name"=>"?", "resetAttemptsCounter"=>"?", "sendEmailNotification"=>"?", "sendIMNotification"=>"?", "trackAsFirstCallResolution"=>"?", "type"=>"?", "typeParameters"=>{"allowChangeTimer"=>"?", "attempts"=>"?", "timer"=>{"days"=>"?", "hours"=>"?", "minutes"=>"?", "seconds"=>"?"}, "useTimer"=>"?"}}}}
 
     def create_disposition(params = {})
-      self.call(:create_disposition, message: params)
+      if params.is_a?(Hash)
+        self.call(:create_disposition, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for createList.
@@ -79,7 +117,11 @@ module Five9Tools
     #   {"createList"=>{"listName"=>"?"}}
 
     def create_list(params = {})
-      self.call(:create_list, message: params)
+      if params.is_a?(Hash)
+        self.call(:create_list, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for createUser.
@@ -87,7 +129,11 @@ module Five9Tools
     #   {"createUser"=>{"userInfo"=>{"agentGroups"=>"?", "cannedReports"=>{"index"=>"?", "name"=>"?"}, "generalInfo"=>{"active"=>"?", "canChangePassword"=>"?", "EMail"=>"?", "extension"=>"?", "federationId"=>"?", "firstName"=>"?", "fullName"=>"?", "IEXScheduled"=>"?", "id"=>"?", "lastName"=>"?", "locale"=>"?", "mediaTypeConfig"=>{"mediaTypes"=>{"enabled"=>"?", "intlligentRouting"=>"?", "maxAlowed"=>"?", "type"=>"?"}}, "mustChangePassword"=>"?", "osLogin"=>"?", "password"=>"?", "phoneNumber"=>"?", "startDate"=>"?", "unifiedCommunicationId"=>"?", "userName"=>"?", "userProfileName"=>"?"}, "roles"=>{"admin"=>{"permissions"=>{"type"=>"?", "value"=>"?"}}, "agent"=>{"alwaysRecorded"=>"?", "attachVmToEmail"=>"?", "permissions"=>{"type"=>"?", "value"=>"?"}, "sendEmailOnVm"=>"?"}, "crmManager"=>{"permissions"=>{"type"=>"?", "value"=>"?"}}, "reporting"=>{"permissions"=>{"type"=>"?", "value"=>"?"}}, "supervisor"=>{"permissions"=>{"type"=>"?", "value"=>"?"}}}, "skills"=>{"id"=>"?", "level"=>"?", "skillName"=>"?", "userName"=>"?"}}}}
 
     def create_user(params = {})
-      self.call(:create_user, message: params)
+      if params.is_a?(Hash)
+        self.call(:create_user, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for createCampaignProfile.
@@ -95,7 +141,11 @@ module Five9Tools
     #   {"createCampaignProfile"=>{"campaignProfile"=>{"ANI"=>"?", "description"=>"?", "dialingSchedule"=>{"dialASAPSortOrder"=>"?", "dialASAPTimeout"=>"?", "dialASAPTimeoutPeriod"=>"?", "dialingOrder"=>"?", "dialingSchedules"=>{"number"=>"?", "startTime"=>{"days"=>"?", "hours"=>"?", "minutes"=>"?", "seconds"=>"?"}, "stopTime"=>{"days"=>"?", "hours"=>"?", "minutes"=>"?", "seconds"=>"?"}}, "includeNumbers"=>"?"}, "dialingTimeout"=>"?", "initialCallPriority"=>"?", "maxCharges"=>"?", "name"=>"?", "numberOfAttempts"=>"?"}}}
 
     def create_campaign_profile(params = {})
-      self.call(:create_campaign_profile, message: params)
+      if params.is_a?(Hash)
+        self.call(:create_campaign_profile, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for createInboundCampaign.
@@ -103,7 +153,11 @@ module Five9Tools
     #   {"createInboundCampaign"=>{"campaign"=>{"description"=>"?", "mode"=>"?", "name"=>"?", "profileName"=>"?", "state"=>"?", "trainingMode"=>"?", "type"=>"?", "autoRecord"=>"?", "callWrapup"=>{"agentNotReady"=>"?", "dispostionName"=>"?", "enabled"=>"?", "reasonCodeName"=>"?", "timeout"=>{"days"=>"?", "hours"=>"?", "minutes"=>"?", "seconds"=>"?"}}, "ftpHost"=>"?", "ftpPassword"=>"?", "ftpUser"=>"?", "recordingNameAsSid"=>"?", "useFtp"=>"?", "defaultIvrSchedule"=>{"ivrSchedule"=>{"name"=>"?", "scriptName"=>"?", "scriptParameters"=>{"name"=>"?", "value"=>"?"}}, "visualModeSettings"=>{"callbackEnabled"=>"?", "chatEnabled"=>"?", "cssTheme"=>"?", "emailEnabled"=>"?", "sentimentFeedbackEnabled"=>"?", "videoEnabled"=>"?", "visualModeEnabled"=>"?", "xFrameOption"=>"?", "xFrameOptionUrl"=>"?", "xFrameOptionsEnabled"=>"?"}}, "maxNumOfLines"=>"?"}}}
 
     def create_inbound_campaign(params = {})
-      self.call(:create_inbound_campaign, message: params)
+      if params.is_a?(Hash)
+        self.call(:create_inbound_campaign, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for createContactField.
@@ -111,7 +165,11 @@ module Five9Tools
     #   {"createContactField"=>{"field"=>{"displayAs"=>"?", "mapTo"=>"?", "name"=>"?", "restrictions"=>{"type"=>"?", "value"=>"?"}, "system"=>"?", "type"=>"?"}}}
 
     def create_contact_field(params = {})
-      self.call(:create_contact_field, message: params)
+      if params.is_a?(Hash)
+        self.call(:create_contact_field, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for createOutboundCampaign.
@@ -119,7 +177,11 @@ module Five9Tools
     #   {"createOutboundCampaign"=>{"campaign"=>{"description"=>"?", "mode"=>"?", "name"=>"?", "profileName"=>"?", "state"=>"?", "trainingMode"=>"?", "type"=>"?", "autoRecord"=>"?", "callWrapup"=>{"agentNotReady"=>"?", "dispostionName"=>"?", "enabled"=>"?", "reasonCodeName"=>"?", "timeout"=>{"days"=>"?", "hours"=>"?", "minutes"=>"?", "seconds"=>"?"}}, "ftpHost"=>"?", "ftpPassword"=>"?", "ftpUser"=>"?", "recordingNameAsSid"=>"?", "useFtp"=>"?", "analyzeLevel"=>"?", "CRMRedialTimeout"=>{"days"=>"?", "hours"=>"?", "minutes"=>"?", "seconds"=>"?"}, "dnisAsAni"=>"?", "enableListDialingRatios"=>"?", "listDialingMode"=>"?", "noOutOfNumbersAlert"=>"?", "stateDialingRule"=>"?", "timeZoneAssignment"=>"?", "actionOnAnswerMachine"=>{"actionArgument"=>"?", "actionType"=>"?", "maxWaitTime"=>{"days"=>"?", "hours"=>"?", "minutes"=>"?", "seconds"=>"?"}}, "actionOnQueueExpiration"=>{"actionArgument"=>"?", "actionType"=>"?", "maxWaitTime"=>{"days"=>"?", "hours"=>"?", "minutes"=>"?", "seconds"=>"?"}}, "callAnalysisMode"=>"?", "callsAgentRatio"=>"?", "dialNumberOnTimeout"=>"?", "dialingMode"=>"?", "dialingPriority"=>"?", "dialingRatio"=>"?", "distributionAlgorithm"=>"?", "distributionTimeFrame"=>"?", "limitPreviewTime"=>"?", "maxDroppedCallsPercentage"=>"?", "maxPreviewTime"=>{"days"=>"?", "hours"=>"?", "minutes"=>"?", "seconds"=>"?"}, "maxQueueTime"=>{"days"=>"?", "hours"=>"?", "minutes"=>"?", "seconds"=>"?"}, "monitorDroppedCalls"=>"?", "previewDialImmediately"=>"?", "useTelemarketingMaxQueTimeEq1"=>"?"}}}
 
     def create_outbound_campaign(params = {})
-      self.call(:create_outbound_campaign, message: params)
+      if params.is_a?(Hash)
+        self.call(:create_outbound_campaign, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for createWebConnector.
@@ -127,7 +189,11 @@ module Five9Tools
     #   {"createWebConnector"=>{"connector"=>{"addWorksheet"=>"?", "agentApplication"=>"?", "clearTriggerDispositions"=>"?", "constants"=>{"key"=>"?", "value"=>"?"}, "ctiWebServices"=>"?", "description"=>"?", "executeInBrowser"=>"?", "name"=>"?", "postConstants"=>{"key"=>"?", "value"=>"?"}, "postMethod"=>"?", "postVariables"=>{"key"=>"?", "value"=>"?"}, "startPageText"=>"?", "trigger"=>"?", "triggerDispositions"=>"?", "url"=>"?", "variables"=>{"key"=>"?", "value"=>"?"}}}}
 
     def create_web_connector(params = {})
-      self.call(:create_web_connector, message: params)
+      if params.is_a?(Hash)
+        self.call(:create_web_connector, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for createSpeedDialNumber.
@@ -135,9 +201,11 @@ module Five9Tools
     #   {"createSpeedDialNumber"=>{"code"=>"?", "number"=>"?", "description"=>"?"}}
 
     def create_speed_dial_number(params = {})
-      self.call(:create_speed_dial_number, message: params)
+      if params.is_a?(Hash)
+        self.call(:create_speed_dial_number, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
-
-    public
   end
 end

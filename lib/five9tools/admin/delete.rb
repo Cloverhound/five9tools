@@ -2,12 +2,18 @@ module Five9Tools
   module Delete
     module_function
 
+    public
+
     #Api request for deleteList.
     # @example Accepts the following parameters as a hash:
     #   {"deleteList"=>{"listName"=>"?"}}
 
     def delete_list(params = {})
-      self.call(:delete_list, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_list, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deleteFromContacts.
@@ -15,7 +21,11 @@ module Five9Tools
     #   {"deleteFromContacts"=>{"crmDeleteSettings"=>{"allowDataCleanup"=>"?", "callbackFormat"=>"?", "callbackUrl"=>"?", "countryCode"=>"?", "failOnFieldParseError"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "reportEmail"=>"?", "separator"=>"?", "skipHeaderLine"=>"?", "crmDeleteMode"=>"?"}, "importData"=>{"values"=>{"item"=>"?"}}}}
 
     def delete_from_contacts(params = {})
-      self.call(:delete_from_contacts, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_from_contacts, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deleteFromListCsv.
@@ -23,7 +33,11 @@ module Five9Tools
     #   {"deleteFromListCsv"=>{"listName"=>"?", "listDeleteSettings"=>{"allowDataCleanup"=>"?", "callbackFormat"=>"?", "callbackUrl"=>"?", "countryCode"=>"?", "failOnFieldParseError"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "reportEmail"=>"?", "separator"=>"?", "skipHeaderLine"=>"?", "listDeleteMode"=>"?"}, "csvData"=>"?"}}
 
     def delete_from_list_csv(params = {})
-      self.call(:delete_from_list_csv, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_from_list_csv, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deleteUser.
@@ -31,7 +45,11 @@ module Five9Tools
     #   {"deleteUser"=>{"userName"=>"?"}}
 
     def delete_user(params = {})
-      self.call(:delete_user, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_user, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deleteCallVariable.
@@ -39,7 +57,11 @@ module Five9Tools
     #   {"deleteCallVariable"=>{"name"=>"?", "groupName"=>"?"}}
 
     def delete_call_variable(params = {})
-      self.call(:delete_call_variable, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_call_variable, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deleteFromListFtp.
@@ -47,7 +69,11 @@ module Five9Tools
     #   {"deleteFromListFtp"=>{"listName"=>"?", "deleteSettings"=>{"allowDataCleanup"=>"?", "callbackFormat"=>"?", "callbackUrl"=>"?", "countryCode"=>"?", "failOnFieldParseError"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "reportEmail"=>"?", "separator"=>"?", "skipHeaderLine"=>"?", "listDeleteMode"=>"?"}, "ftpSettings"=>{"hostname"=>"?", "password"=>"?", "path"=>"?", "username"=>"?"}}}
 
     def delete_from_list_ftp(params = {})
-      self.call(:delete_from_list_ftp, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_from_list_ftp, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deleteReasonCode.
@@ -55,7 +81,11 @@ module Five9Tools
     #   {"deleteReasonCode"=>{"reasonCodeName"=>"?"}}
 
     def delete_reason_code(params = {})
-      self.call(:delete_reason_code, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_reason_code, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for asyncDeleteRecordsFromList.
@@ -63,7 +93,11 @@ module Five9Tools
     #   {"asyncDeleteRecordsFromList"=>{"listName"=>"?", "listDeleteSettings"=>{"allowDataCleanup"=>"?", "callbackFormat"=>"?", "callbackUrl"=>"?", "countryCode"=>"?", "failOnFieldParseError"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "reportEmail"=>"?", "separator"=>"?", "skipHeaderLine"=>"?", "listDeleteMode"=>"?"}, "importData"=>{"values"=>{"item"=>"?"}}}}
 
     def async_delete_records_from_list(params = {})
-      self.call(:async_delete_records_from_list, message: params)
+      if params.is_a?(Hash)
+        self.call(:async_delete_records_from_list, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deleteSkill.
@@ -71,7 +105,11 @@ module Five9Tools
     #   {"deleteSkill"=>{"skillName"=>"?"}}
 
     def delete_skill(params = {})
-      self.call(:delete_skill, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_skill, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deleteAllFromList.
@@ -79,7 +117,11 @@ module Five9Tools
     #   {"deleteAllFromList"=>{"listName"=>"?", "reportEmail"=>"?", "callbackUrl"=>"?", "callbackFormat"=>"?"}}
 
     def delete_all_from_list(params = {})
-      self.call(:delete_all_from_list, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_all_from_list, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deleteCampaign.
@@ -87,7 +129,11 @@ module Five9Tools
     #   {"deleteCampaign"=>{"campaignName"=>"?"}}
 
     def delete_campaign(params = {})
-      self.call(:delete_campaign, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_campaign, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deleteAgentGroup.
@@ -95,7 +141,11 @@ module Five9Tools
     #   {"deleteAgentGroup"=>{"groupName"=>"?"}}
 
     def delete_agent_group(params = {})
-      self.call(:delete_agent_group, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_agent_group, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deleteIVRScript.
@@ -103,7 +153,11 @@ module Five9Tools
     #   {"deleteIVRScript"=>{"name"=>"?"}}
 
     def delete_ivr_script(params = {})
-      self.call(:delete_ivr_script, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_ivr_script, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deleteFromList.
@@ -111,7 +165,11 @@ module Five9Tools
     #   {"deleteFromList"=>{"listName"=>"?", "listDeleteSettings"=>{"allowDataCleanup"=>"?", "callbackFormat"=>"?", "callbackUrl"=>"?", "countryCode"=>"?", "failOnFieldParseError"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "reportEmail"=>"?", "separator"=>"?", "skipHeaderLine"=>"?", "listDeleteMode"=>"?"}, "importData"=>{"values"=>{"item"=>"?"}}}}
 
     def delete_from_list(params = {})
-      self.call(:delete_from_list, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_from_list, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deleteCampaignProfile.
@@ -119,7 +177,11 @@ module Five9Tools
     #   {"deleteCampaignProfile"=>{"profileName"=>"?"}}
 
     def delete_campaign_profile(params = {})
-      self.call(:delete_campaign_profile, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_campaign_profile, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deleteUserProfile.
@@ -127,7 +189,11 @@ module Five9Tools
     #   {"deleteUserProfile"=>{"userProfileName"=>"?"}}
 
     def delete_user_profile(params = {})
-      self.call(:delete_user_profile, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_user_profile, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deleteContactField.
@@ -135,7 +201,11 @@ module Five9Tools
     #   {"deleteContactField"=>{"fieldName"=>"?"}}
 
     def delete_contact_field(params = {})
-      self.call(:delete_contact_field, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_contact_field, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deleteFromContactsFtp.
@@ -143,7 +213,11 @@ module Five9Tools
     #   {"deleteFromContactsFtp"=>{"deleteSettings"=>{"allowDataCleanup"=>"?", "callbackFormat"=>"?", "callbackUrl"=>"?", "countryCode"=>"?", "failOnFieldParseError"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "reportEmail"=>"?", "separator"=>"?", "skipHeaderLine"=>"?", "crmDeleteMode"=>"?"}, "ftpSettings"=>{"hostname"=>"?", "password"=>"?", "path"=>"?", "username"=>"?"}}}
 
     def delete_from_contacts_ftp(params = {})
-      self.call(:delete_from_contacts_ftp, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_from_contacts_ftp, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deleteCallVariablesGroup.
@@ -151,7 +225,11 @@ module Five9Tools
     #   {"deleteCallVariablesGroup"=>{"name"=>"?"}}
 
     def delete_call_variables_group(params = {})
-      self.call(:delete_call_variables_group, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_call_variables_group, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deleteReasonCodeByType.
@@ -159,7 +237,11 @@ module Five9Tools
     #   {"deleteReasonCodeByType"=>{"reasonCodeName"=>"?", "type"=>"?"}}
 
     def delete_reason_code_by_type(params = {})
-      self.call(:delete_reason_code_by_type, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_reason_code_by_type, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deleteWebConnector.
@@ -167,7 +249,11 @@ module Five9Tools
     #   {"deleteWebConnector"=>{"name"=>"?"}}
 
     def delete_web_connector(params = {})
-      self.call(:delete_web_connector, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_web_connector, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deletePrompt.
@@ -175,7 +261,11 @@ module Five9Tools
     #   {"deletePrompt"=>{"promptName"=>"?"}}
 
     def delete_prompt(params = {})
-      self.call(:delete_prompt, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_prompt, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deleteLanguagePrompt.
@@ -183,7 +273,11 @@ module Five9Tools
     #   {"deleteLanguagePrompt"=>{"promptName"=>"?", "language"=>"?"}}
 
     def delete_language_prompt(params = {})
-      self.call(:delete_language_prompt, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_language_prompt, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deleteRecordFromList.
@@ -191,7 +285,11 @@ module Five9Tools
     #   {"deleteRecordFromList"=>{"listName"=>"?", "listDeleteSettings"=>{"allowDataCleanup"=>"?", "callbackFormat"=>"?", "callbackUrl"=>"?", "countryCode"=>"?", "failOnFieldParseError"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "reportEmail"=>"?", "separator"=>"?", "skipHeaderLine"=>"?", "listDeleteMode"=>"?"}, "record"=>{"fields"=>"?"}}}
 
     def delete_record_from_list(params = {})
-      self.call(:delete_record_from_list, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_record_from_list, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for deleteFromContactsCsv.
@@ -199,9 +297,11 @@ module Five9Tools
     #   {"deleteFromContactsCsv"=>{"crmDeleteSettings"=>{"allowDataCleanup"=>"?", "callbackFormat"=>"?", "callbackUrl"=>"?", "countryCode"=>"?", "failOnFieldParseError"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "reportEmail"=>"?", "separator"=>"?", "skipHeaderLine"=>"?", "crmDeleteMode"=>"?"}, "csvData"=>"?"}}
 
     def delete_from_contacts_csv(params = {})
-      self.call(:delete_from_contacts_csv, message: params)
+      if params.is_a?(Hash)
+        self.call(:delete_from_contacts_csv, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
-
-    public
   end
 end

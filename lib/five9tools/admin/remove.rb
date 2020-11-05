@@ -9,7 +9,11 @@ module Five9Tools
     #   {"removeDisposition"=>{"dispositionName"=>"?"}}
 
     def remove_disposition(params = {})
-      self.call(remove_disposition, message: params)
+      if params.is_a?(Hash)
+        self.call(:remove_disposition, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for removeListsFromCampaign.
@@ -17,7 +21,11 @@ module Five9Tools
     #   {"removeListsFromCampaign"=>{"campaignName"=>"?", "lists"=>"?"}}
 
     def remove_lists_from_campaign(params = {})
-      self.call(remove_lists_from_campaign, message: params)
+      if params.is_a?(Hash)
+        self.call(:remove_lists_from_campaign, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for removeIvrIcons.
@@ -25,7 +33,11 @@ module Five9Tools
     #   {"removeIvrIcons"=>{"ivrScriptName"=>"?"}}
 
     def remove_ivr_icons(params = {})
-      self.call(remove_ivr_icons, message: params)
+      if params.is_a?(Hash)
+        self.call(:remove_ivr_icons, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for removeSpeedDialNumber.
@@ -33,7 +45,11 @@ module Five9Tools
     #   {"removeSpeedDialNumber"=>{"code"=>"?"}}
 
     def remove_speed_dial_number(params = {})
-      self.call(remove_speed_dial_number, message: params)
+      if params.is_a?(Hash)
+        self.call(:remove_speed_dial_number, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for removeDispositionsFromCampaign.
@@ -41,7 +57,11 @@ module Five9Tools
     #   {"removeDispositionsFromCampaign"=>{"campaignName"=>"?", "dispositions"=>"?"}}
 
     def remove_dispositions_from_campaign(params = {})
-      self.call(remove_dispositions_from_campaign, message: params)
+      if params.is_a?(Hash)
+        self.call(:remove_dispositions_from_campaign, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for removeSkillAudioFile.
@@ -49,7 +69,11 @@ module Five9Tools
     #   {"removeSkillAudioFile"=>{"skillName"=>"?", "promptName"=>"?"}}
 
     def remove_skill_audio_file(params = {})
-      self.call(remove_skill_audio_file, message: params)
+      if params.is_a?(Hash)
+        self.call(:remove_skill_audio_file, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for userSkillRemove.
@@ -57,7 +81,11 @@ module Five9Tools
     #   {"userSkillRemove"=>{"userSkill"=>{"id"=>"?", "level"=>"?", "skillName"=>"?", "userName"=>"?"}}}
 
     def user_skill_remove(params = {})
-      self.call(user_skill_remove, message: params)
+      if params.is_a?(Hash)
+        self.call(:user_skill_remove, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for removeDNISFromCampaign.
@@ -65,7 +93,11 @@ module Five9Tools
     #   {"removeDNISFromCampaign"=>{"campaignName"=>"?", "DNISList"=>"?"}}
 
     def remove_dnis_from_campaign(params = {})
-      self.call(remove_dnis_from_campaign, message: params)
+      if params.is_a?(Hash)
+        self.call(:remove_dnis_from_campaign, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for removeSkillsFromCampaign.
@@ -73,7 +105,11 @@ module Five9Tools
     #   {"removeSkillsFromCampaign"=>{"campaignName"=>"?", "skills"=>"?"}}
 
     def remove_skills_from_campaign(params = {})
-      self.call(remove_skills_from_campaign, message: params)
+      if params.is_a?(Hash)
+        self.call(:remove_skills_from_campaign, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for removeIvrScriptOwnership.
@@ -81,7 +117,11 @@ module Five9Tools
     #   {"removeIvrScriptOwnership"=>{"ivrScriptName"=>"?"}}
 
     def remove_ivr_script_ownership(params = {})
-      self.call(remove_ivr_script_ownership, message: params)
+      if params.is_a?(Hash)
+        self.call(:remove_ivr_script_ownership, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for removeNumbersFromDnc.
@@ -89,7 +129,11 @@ module Five9Tools
     #   {"removeNumbersFromDnc"=>{"numbers"=>"?"}}
 
     def remove_numbers_from_dnc(params = {})
-      self.call(remove_numbers_from_dnc, message: params)
+      if params.is_a?(Hash)
+        self.call(:remove_numbers_from_dnc, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     # def remove_dnis_from_campaign(campaign, number)

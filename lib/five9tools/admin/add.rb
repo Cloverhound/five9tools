@@ -9,15 +9,23 @@ module Five9Tools
     #   {"asyncAddRecordsToList"=>{"listName"=>"?", "listUpdateSettings"=>{"allowDataCleanup"=>"?", "callbackFormat"=>"?", "callbackUrl"=>"?", "countryCode"=>"?", "failOnFieldParseError"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "reportEmail"=>"?", "separator"=>"?", "skipHeaderLine"=>"?", "callNowColumnNumber"=>"?", "callNowMode"=>"?", "callTime"=>"?", "callTimeColumnNumber"=>"?", "cleanListBeforeUpdate"=>"?", "crmAddMode"=>"?", "crmUpdateMode"=>"?", "listAddMode"=>"?"}, "importData"=>{"values"=>{"item"=>"?"}}, "resetDispositionsInCampaignsImportData"=>"?"}}
 
     def async_add_records_to_list(params = {})
-      self.call(:async_add_records_to_list, message: params)
+      if params.is_a?(Hash)
+        self.call(:async_add_records_to_list, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for addDispositionsToCampaign.
     # @example Accepts the following parameters as a hash:
-    #   {"addDispositionsToCampaign"=>{"campaignName"=>"?", "dispositions"=>"[?]", "isSkipPreviewDisposition"=>"?"}}
+    #   {"addDispositionsToCampaign"=>{"campaignName"=>"?", "dispositions"=>"?", "isSkipPreviewDisposition"=>"?"}}
 
     def add_dispositions_to_campaign(params = {})
-      self.call(:add_dispositions_to_campaign, message: params)
+      if params.is_a?(Hash)
+        self.call(:add_dispositions_to_campaign, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for addToListCsv.
@@ -25,7 +33,11 @@ module Five9Tools
     #   {"addToListCsv"=>{"listName"=>"?", "listUpdateSettings"=>{"allowDataCleanup"=>"?", "callbackFormat"=>"?", "callbackUrl"=>"?", "countryCode"=>"?", "failOnFieldParseError"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "reportEmail"=>"?", "separator"=>"?", "skipHeaderLine"=>"?", "callNowColumnNumber"=>"?", "callNowMode"=>"?", "callTime"=>"?", "callTimeColumnNumber"=>"?", "cleanListBeforeUpdate"=>"?", "crmAddMode"=>"?", "crmUpdateMode"=>"?", "listAddMode"=>"?"}, "csvData"=>"?"}}
 
     def add_to_list_csv(params = {})
-      self.call(:add_to_list_csv, message: params)
+      if params.is_a?(Hash)
+        self.call(:add_to_list_csv, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for addRecordToList.
@@ -33,7 +45,11 @@ module Five9Tools
     #   {"addRecordToList"=>{"listName"=>"?", "listUpdateSettings"=>{"allowDataCleanup"=>"?", "callbackFormat"=>"?", "callbackUrl"=>"?", "countryCode"=>"?", "failOnFieldParseError"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "reportEmail"=>"?", "separator"=>"?", "skipHeaderLine"=>"?", "callNowColumnNumber"=>"?", "callNowMode"=>"?", "callTime"=>"?", "callTimeColumnNumber"=>"?", "cleanListBeforeUpdate"=>"?", "crmAddMode"=>"?", "crmUpdateMode"=>"?", "listAddMode"=>"?"}, "record"=>{"fields"=>"?"}}}
 
     def add_record_to_list(params = {})
-      self.call(:add_record_to_list, message: params)
+      if params.is_a?(Hash)
+        self.call(:add_record_to_list, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for addListsToCampaign.
@@ -41,7 +57,11 @@ module Five9Tools
     #   {"addListsToCampaign"=>{"campaignName"=>"?", "lists"=>{"campaignName"=>"?", "dialingPriority"=>"?", "dialingRatio"=>"?", "listName"=>"?", "priority"=>"?"}}}
 
     def add_lists_to_campaign(params = {})
-      self.call(:add_lists_to_campaign, message: params)
+      if params.is_a?(Hash)
+        self.call(:add_lists_to_campaign, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for addNumbersToDnc.
@@ -49,7 +69,11 @@ module Five9Tools
     #   {"addNumbersToDnc"=>{"numbers"=>"?"}}
 
     def add_numbers_to_dnc(params = {})
-      self.call(:add_numbers_to_dnc, message: params)
+      if params.is_a?(Hash)
+        self.call(:add_numbers_to_dnc, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for addSkillAudioFile.
@@ -57,7 +81,11 @@ module Five9Tools
     #   {"addSkillAudioFile"=>{"skillName"=>"?", "promptName"=>"?"}}
 
     def add_skill_audio_file(params = {})
-      self.call(:add_skill_audio_file, message: params)
+      if params.is_a?(Hash)
+        self.call(:add_skill_audio_file, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for addToListFtp.
@@ -65,7 +93,11 @@ module Five9Tools
     #   {"addToListFtp"=>{"listName"=>"?", "updateSettings"=>{"allowDataCleanup"=>"?", "callbackFormat"=>"?", "callbackUrl"=>"?", "countryCode"=>"?", "failOnFieldParseError"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "reportEmail"=>"?", "separator"=>"?", "skipHeaderLine"=>"?", "callNowColumnNumber"=>"?", "callNowMode"=>"?", "callTime"=>"?", "callTimeColumnNumber"=>"?", "cleanListBeforeUpdate"=>"?", "crmAddMode"=>"?", "crmUpdateMode"=>"?", "listAddMode"=>"?"}, "ftpSettings"=>{"hostname"=>"?", "password"=>"?", "path"=>"?", "username"=>"?"}}}
 
     def add_to_list_ftp(params = {})
-      self.call(:add_to_list_ftp, message: params)
+      if params.is_a?(Hash)
+        self.call(:add_to_list_ftp, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for addSkillsToCampaign.
@@ -73,7 +105,11 @@ module Five9Tools
     #   {"addSkillsToCampaign"=>{"campaignName"=>"?", "skills"=>"?"}}
 
     def add_skills_to_campaign(params = {})
-      self.call(:add_skills_to_campaign, message: params)
+      if params.is_a?(Hash)
+        self.call(:add_skills_to_campaign, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for addRecordToListSimple.
@@ -81,7 +117,11 @@ module Five9Tools
     #   {"addRecordToListSimple"=>{"listName"=>"?", "listUpdateSimpleSettings"=>{"callAsap"=>"?", "countryCode"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "timeToCall"=>"?", "updateCRM"=>"?"}, "record"=>{"fields"=>"?"}}}
 
     def add_record_to_list_simple(params = {})
-      self.call(:add_record_to_list_simple, message: params)
+      if params.is_a?(Hash)
+        self.call(:add_record_to_list_simple, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for userSkillAdd.
@@ -89,7 +129,11 @@ module Five9Tools
     #   {"userSkillAdd"=>{"userSkill"=>{"id"=>"?", "level"=>"?", "skillName"=>"?", "userName"=>"?"}}}
 
     def user_skill_add(params = {})
-      self.call(:user_skill_add, message: params)
+      if params.is_a?(Hash)
+        self.call(:user_skill_add, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for addPromptWavInline.
@@ -97,7 +141,11 @@ module Five9Tools
     #   {"addPromptWavInline"=>{"prompt"=>{"description"=>"?", "languages"=>"?", "name"=>"?", "type"=>"?"}, "wavFile"=>"cid:1027282953513"}}
 
     def add_prompt_wav_inline(params = {})
-      self.call(:add_prompt_wav_inline, message: params)
+      if params.is_a?(Hash)
+        self.call(:add_prompt_wav_inline, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for addPromptWav.
@@ -105,7 +153,11 @@ module Five9Tools
     #   {"addPromptWav"=>{"prompt"=>{"description"=>"?", "languages"=>"?", "name"=>"?", "type"=>"?"}, "wavFile"=>"cid:1502868595416"}}
 
     def add_prompt_wav(params = {})
-      self.call(:add_prompt_wav, message: params)
+      if params.is_a?(Hash)
+        self.call(:add_prompt_wav, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for addToList.
@@ -113,7 +165,11 @@ module Five9Tools
     #   {"addToList"=>{"listName"=>"?", "listUpdateSettings"=>{"allowDataCleanup"=>"?", "callbackFormat"=>"?", "callbackUrl"=>"?", "countryCode"=>"?", "failOnFieldParseError"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "reportEmail"=>"?", "separator"=>"?", "skipHeaderLine"=>"?", "callNowColumnNumber"=>"?", "callNowMode"=>"?", "callTime"=>"?", "callTimeColumnNumber"=>"?", "cleanListBeforeUpdate"=>"?", "crmAddMode"=>"?", "crmUpdateMode"=>"?", "listAddMode"=>"?"}, "importData"=>{"values"=>{"item"=>"?"}}}}
 
     def add_to_list(params = {})
-      self.call(:add_to_list, message: params)
+      if params.is_a?(Hash)
+        self.call(:add_to_list, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for addPromptTTS.
@@ -121,7 +177,11 @@ module Five9Tools
     #   {"addPromptTTS"=>{"prompt"=>{"description"=>"?", "languages"=>"?", "name"=>"?", "type"=>"?"}, "ttsInfo"=>{"language"=>"?", "sayAs"=>"?", "sayAsFormat"=>"?", "text"=>"?", "voice"=>"?"}}}
 
     def add_prompt_tts(params = {})
-      self.call(:add_prompt_tts, message: params)
+      if params.is_a?(Hash)
+        self.call(:add_prompt_tts, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for addDNISToCampaign.
@@ -129,24 +189,11 @@ module Five9Tools
     #   {"addDNISToCampaign"=>{"campaignName"=>"?", "DNISList"=>"?"}}
 
     def add_dnis_to_campaign(params = {})
-      self.call(:add_dnis_to_campaign, message: params)
-    end
-
-    def add_dispositions_to_campaign(campaign_name = "", dispositions = [])
-      message = {
-        campaignName: campaign_name,
-        dispositions: dispositions,
-        isSkipPreviewDisposition: false,
-      }
-      self.call(:add_dispositions_to_campaign, message: message).body
-    end
-
-    def add_dnis_to_campaign(campaign = "", number = "")
-      message = {
-        :campaignName => campaign,
-        "DNISList" => number,
-      }
-      self.call(:add_dnis_to_campaign, :message => message).body
+      if params.is_a?(Hash)
+        self.call(:add_dnis_to_campaign, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
   end
 end

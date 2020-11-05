@@ -2,12 +2,18 @@ module Five9Tools
   module Update
     module_function
 
+    public
+
     #Api request for updateDispositionsFtp.
     # @example Accepts the following parameters as a hash:
     #   {"updateDispositionsFtp"=>{"campaignName"=>"?", "updateSettings"=>{"allowDataCleanup"=>"?", "callbackFormat"=>"?", "callbackUrl"=>"?", "countryCode"=>"?", "failOnFieldParseError"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "reportEmail"=>"?", "separator"=>"?", "skipHeaderLine"=>"?", "commonDispositionValue"=>"?", "dispositionColumnNumber"=>"?", "dispositionsUpdateMode"=>"?", "updateToCommonDisposition"=>"?", "warnIfNoCrmMatchFound"=>"?"}, "ftpSettings"=>{"hostname"=>"?", "password"=>"?", "path"=>"?", "username"=>"?"}}}
 
     def update_dispositions_ftp(params = {})
-      self.call(:update_dispositions_ftp, message: params)
+      if params.is_a?(Hash)
+        self.call(:update_dispositions_ftp, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for updateConfigurationTranslations.
@@ -15,7 +21,11 @@ module Five9Tools
     #   {"updateConfigurationTranslations"=>{"localeName"=>"?", "diffTranslations"=>{"comment"=>"?", "objectField"=>"?", "objectId"=>"?", "objectType"=>"?", "value"=>"?"}}}
 
     def update_configuration_translations(params = {})
-      self.call(:update_configuration_translations, message: params)
+      if params.is_a?(Hash)
+        self.call(:update_configuration_translations, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for updateCrmRecord.
@@ -23,7 +33,11 @@ module Five9Tools
     #   {"updateCrmRecord"=>{"crmUpdateSettings"=>{"allowDataCleanup"=>"?", "callbackFormat"=>"?", "callbackUrl"=>"?", "countryCode"=>"?", "failOnFieldParseError"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "reportEmail"=>"?", "separator"=>"?", "skipHeaderLine"=>"?", "crmAddMode"=>"?", "crmUpdateMode"=>"?"}, "record"=>{"fields"=>"?"}}}
 
     def update_crm_record(params = {})
-      self.call(:update_crm_record, message: params)
+      if params.is_a?(Hash)
+        self.call(:update_crm_record, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for updateDispositionsCsv.
@@ -31,7 +45,11 @@ module Five9Tools
     #   {"updateDispositionsCsv"=>{"campaignName"=>"?", "DispositionsUpdateSettings"=>{"allowDataCleanup"=>"?", "callbackFormat"=>"?", "callbackUrl"=>"?", "countryCode"=>"?", "failOnFieldParseError"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "reportEmail"=>"?", "separator"=>"?", "skipHeaderLine"=>"?", "commonDispositionValue"=>"?", "dispositionColumnNumber"=>"?", "dispositionsUpdateMode"=>"?", "updateToCommonDisposition"=>"?", "warnIfNoCrmMatchFound"=>"?"}, "csvData"=>"?"}}
 
     def update_dispositions_csv(params = {})
-      self.call(:update_dispositions_csv, message: params)
+      if params.is_a?(Hash)
+        self.call(:update_dispositions_csv, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for asyncUpdateCrmRecords.
@@ -39,7 +57,11 @@ module Five9Tools
     #   {"asyncUpdateCrmRecords"=>{"crmUpdateSettings"=>{"allowDataCleanup"=>"?", "callbackFormat"=>"?", "callbackUrl"=>"?", "countryCode"=>"?", "failOnFieldParseError"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "reportEmail"=>"?", "separator"=>"?", "skipHeaderLine"=>"?", "crmAddMode"=>"?", "crmUpdateMode"=>"?"}, "importData"=>{"values"=>{"item"=>"?"}}}}
 
     def async_update_crm_records(params = {})
-      self.call(:async_update_crm_records, message: params)
+      if params.is_a?(Hash)
+        self.call(:async_update_crm_records, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for updateDispositions.
@@ -47,7 +69,11 @@ module Five9Tools
     #   {"updateDispositions"=>{"campaignName"=>"?", "DispositionsUpdateSettings"=>{"allowDataCleanup"=>"?", "callbackFormat"=>"?", "callbackUrl"=>"?", "countryCode"=>"?", "failOnFieldParseError"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "reportEmail"=>"?", "separator"=>"?", "skipHeaderLine"=>"?", "commonDispositionValue"=>"?", "dispositionColumnNumber"=>"?", "dispositionsUpdateMode"=>"?", "updateToCommonDisposition"=>"?", "warnIfNoCrmMatchFound"=>"?"}, "importData"=>{"values"=>{"item"=>"?"}}}}
 
     def update_dispositions(params = {})
-      self.call(:update_dispositions, message: params)
+      if params.is_a?(Hash)
+        self.call(:update_dispositions, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for updateContactsFtp.
@@ -55,7 +81,11 @@ module Five9Tools
     #   {"updateContactsFtp"=>{"updateSettings"=>{"allowDataCleanup"=>"?", "callbackFormat"=>"?", "callbackUrl"=>"?", "countryCode"=>"?", "failOnFieldParseError"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "reportEmail"=>"?", "separator"=>"?", "skipHeaderLine"=>"?", "crmAddMode"=>"?", "crmUpdateMode"=>"?"}, "ftpSettings"=>{"hostname"=>"?", "password"=>"?", "path"=>"?", "username"=>"?"}}}
 
     def update_contacts_ftp(params = {})
-      self.call(:update_contacts_ftp, message: params)
+      if params.is_a?(Hash)
+        self.call(:update_contacts_ftp, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for updateContactsCsv.
@@ -63,7 +93,11 @@ module Five9Tools
     #   {"updateContactsCsv"=>{"crmUpdateSettings"=>{"allowDataCleanup"=>"?", "callbackFormat"=>"?", "callbackUrl"=>"?", "countryCode"=>"?", "failOnFieldParseError"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "reportEmail"=>"?", "separator"=>"?", "skipHeaderLine"=>"?", "crmAddMode"=>"?", "crmUpdateMode"=>"?"}, "csvData"=>"?"}}
 
     def update_contacts_csv(params = {})
-      self.call(:update_contacts_csv, message: params)
+      if params.is_a?(Hash)
+        self.call(:update_contacts_csv, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for updateContacts.
@@ -71,7 +105,11 @@ module Five9Tools
     #   {"updateContacts"=>{"crmUpdateSettings"=>{"allowDataCleanup"=>"?", "callbackFormat"=>"?", "callbackUrl"=>"?", "countryCode"=>"?", "failOnFieldParseError"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "reportEmail"=>"?", "separator"=>"?", "skipHeaderLine"=>"?", "crmAddMode"=>"?", "crmUpdateMode"=>"?"}, "importData"=>{"values"=>{"item"=>"?"}}}}
 
     def update_contacts(params = {})
-      self.call(:update_contacts, message: params)
+      if params.is_a?(Hash)
+        self.call(:update_contacts, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
 
     #Api request for asyncUpdateCampaignDispositions.
@@ -79,9 +117,11 @@ module Five9Tools
     #   {"asyncUpdateCampaignDispositions"=>{"campaignName"=>"?", "dispositionsUpdateSettings"=>{"allowDataCleanup"=>"?", "callbackFormat"=>"?", "callbackUrl"=>"?", "countryCode"=>"?", "failOnFieldParseError"=>"?", "fieldsMapping"=>{"columnNumber"=>"?", "fieldName"=>"?", "key"=>"?"}, "reportEmail"=>"?", "separator"=>"?", "skipHeaderLine"=>"?", "commonDispositionValue"=>"?", "dispositionColumnNumber"=>"?", "dispositionsUpdateMode"=>"?", "updateToCommonDisposition"=>"?", "warnIfNoCrmMatchFound"=>"?"}, "importData"=>{"values"=>{"item"=>"?"}}}}
 
     def async_update_campaign_dispositions(params = {})
-      self.call(:async_update_campaign_dispositions, message: params)
+      if params.is_a?(Hash)
+        self.call(:async_update_campaign_dispositions, message: params)
+      else
+        "Implement something for simple use case"
+      end
     end
-
-    public
   end
 end
