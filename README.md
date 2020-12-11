@@ -7,6 +7,7 @@ Ruby 2.7.0+ recommended
 ```sh
 git clone git@github.com:Cloverhound/five9tools.git
 cd five9tools
+bundle install
 rake build && rake install
 ```
 
