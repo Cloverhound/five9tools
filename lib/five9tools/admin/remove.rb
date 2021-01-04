@@ -10,7 +10,12 @@ module Five9Tools
 
     def remove_disposition(params = {})
       if params.is_a?(Hash)
-        self.call(:remove_disposition, message: params)
+        begin
+          res = self.call(:remove_disposition, message: params)
+          res[:remove_disposition_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -22,7 +27,12 @@ module Five9Tools
 
     def remove_lists_from_campaign(params = {})
       if params.is_a?(Hash)
-        self.call(:remove_lists_from_campaign, message: params)
+        begin
+          res = self.call(:remove_lists_from_campaign, message: params)
+          res[:remove_lists_from_campaign_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -34,7 +44,12 @@ module Five9Tools
 
     def remove_ivr_icons(params = {})
       if params.is_a?(Hash)
-        self.call(:remove_ivr_icons, message: params)
+        begin
+          res = self.call(:remove_ivr_icons, message: params)
+          res[:remove_ivr_icons_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -46,7 +61,12 @@ module Five9Tools
 
     def remove_speed_dial_number(params = {})
       if params.is_a?(Hash)
-        self.call(:remove_speed_dial_number, message: params)
+        begin
+          res = self.call(:remove_speed_dial_number, message: params)
+          res[:remove_speed_dial_number_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -58,7 +78,12 @@ module Five9Tools
 
     def remove_dispositions_from_campaign(params = {})
       if params.is_a?(Hash)
-        self.call(:remove_dispositions_from_campaign, message: params)
+        begin
+          res = self.call(:remove_dispositions_from_campaign, message: params)
+          res[:remove_dispositions_from_campaign_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -70,7 +95,12 @@ module Five9Tools
 
     def remove_skill_audio_file(params = {})
       if params.is_a?(Hash)
-        self.call(:remove_skill_audio_file, message: params)
+        begin
+          res = self.call(:remove_skill_audio_file, message: params)
+          res[:remove_skill_audio_file_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -82,7 +112,12 @@ module Five9Tools
 
     def user_skill_remove(params = {})
       if params.is_a?(Hash)
-        self.call(:user_skill_remove, message: params)
+        begin
+          res = self.call(:user_skill_remove, message: params)
+          res[:user_skill_remove_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -94,7 +129,12 @@ module Five9Tools
 
     def remove_dnis_from_campaign(params = {})
       if params.is_a?(Hash)
-        self.call(:remove_dnis_from_campaign, message: params)
+        begin
+          res = self.call(:remove_dnis_from_campaign, message: params)
+          res[:remove_dnis_from_campaign_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -106,7 +146,12 @@ module Five9Tools
 
     def remove_skills_from_campaign(params = {})
       if params.is_a?(Hash)
-        self.call(:remove_skills_from_campaign, message: params)
+        begin
+          res = self.call(:remove_skills_from_campaign, message: params)
+          res[:remove_skills_from_campaign_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -118,7 +163,12 @@ module Five9Tools
 
     def remove_ivr_script_ownership(params = {})
       if params.is_a?(Hash)
-        self.call(:remove_ivr_script_ownership, message: params)
+        begin
+          res = self.call(:remove_ivr_script_ownership, message: params)
+          res[:remove_ivr_script_ownership_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -130,7 +180,12 @@ module Five9Tools
 
     def remove_numbers_from_dnc(params = {})
       if params.is_a?(Hash)
-        self.call(:remove_numbers_from_dnc, message: params)
+        begin
+          res = self.call(:remove_numbers_from_dnc, message: params)
+          res[:remove_numbers_from_dnc_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end

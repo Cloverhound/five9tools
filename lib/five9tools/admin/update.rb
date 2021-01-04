@@ -10,7 +10,12 @@ module Five9Tools
 
     def update_dispositions_ftp(params = {})
       if params.is_a?(Hash)
-        self.call(:update_dispositions_ftp, message: params)
+        begin
+          res = self.call(:update_dispositions_ftp, message: params)
+          res[:update_dispositions_ftp_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -22,7 +27,12 @@ module Five9Tools
 
     def update_configuration_translations(params = {})
       if params.is_a?(Hash)
-        self.call(:update_configuration_translations, message: params)
+        begin
+          res = self.call(:update_configuration_translations, message: params)
+          res[:update_configuration_translations_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -34,7 +44,12 @@ module Five9Tools
 
     def update_crm_record(params = {})
       if params.is_a?(Hash)
-        self.call(:update_crm_record, message: params)
+        begin
+          res = self.call(:update_crm_record, message: params)
+          res[:update_crm_record_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -46,7 +61,12 @@ module Five9Tools
 
     def update_dispositions_csv(params = {})
       if params.is_a?(Hash)
-        self.call(:update_dispositions_csv, message: params)
+        begin
+          res = self.call(:update_dispositions_csv, message: params)
+          res[:update_dispositions_csv_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -58,7 +78,12 @@ module Five9Tools
 
     def async_update_crm_records(params = {})
       if params.is_a?(Hash)
-        self.call(:async_update_crm_records, message: params)
+        begin
+          res = self.call(:async_update_crm_records, message: params)
+          res[:async_update_crm_records_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -70,7 +95,12 @@ module Five9Tools
 
     def update_dispositions(params = {})
       if params.is_a?(Hash)
-        self.call(:update_dispositions, message: params)
+        begin
+          res = self.call(:update_dispositions, message: params)
+          res[:update_dispositions_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -82,7 +112,12 @@ module Five9Tools
 
     def update_contacts_ftp(params = {})
       if params.is_a?(Hash)
-        self.call(:update_contacts_ftp, message: params)
+        begin
+          res = self.call(:update_contacts_ftp, message: params)
+          res[:update_contacts_ftp_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -94,7 +129,12 @@ module Five9Tools
 
     def update_contacts_csv(params = {})
       if params.is_a?(Hash)
-        self.call(:update_contacts_csv, message: params)
+        begin
+          res = self.call(:update_contacts_csv, message: params)
+          res[:update_contacts_csv_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -106,7 +146,12 @@ module Five9Tools
 
     def update_contacts(params = {})
       if params.is_a?(Hash)
-        self.call(:update_contacts, message: params)
+        begin
+          res = self.call(:update_contacts, message: params)
+          res[:update_contacts_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -118,7 +163,12 @@ module Five9Tools
 
     def async_update_campaign_dispositions(params = {})
       if params.is_a?(Hash)
-        self.call(:async_update_campaign_dispositions, message: params)
+        begin
+          res = self.call(:async_update_campaign_dispositions, message: params)
+          res[:async_update_campaign_dispositions_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end

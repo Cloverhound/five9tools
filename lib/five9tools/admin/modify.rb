@@ -30,7 +30,12 @@ module Five9Tools
 
     def modify_call_variables_group(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_call_variables_group, message: params)
+        begin
+          res = self.call(:modify_call_variables_group, message: params)
+          res[:modify_call_variables_group_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -42,7 +47,12 @@ module Five9Tools
 
     def modify_user_profile_user_list(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_user_profile_user_list, message: params)
+        begin
+          res = self.call(:modify_user_profile_user_list, message: params)
+          res[:modify_user_profile_user_list_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -54,7 +64,12 @@ module Five9Tools
 
     def modify_web_connector(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_web_connector, message: params)
+        begin
+          res = self.call(:modify_web_connector, message: params)
+          res[:modify_web_connector_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -66,7 +81,12 @@ module Five9Tools
 
     def modify_autodial_campaign(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_autodial_campaign, message: params)
+        begin
+          res = self.call(:modify_autodial_campaign, message: params)
+          res[:modify_autodial_campaign_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -78,7 +98,12 @@ module Five9Tools
 
     def modify_prompt_wav_inline(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_prompt_wav_inline, message: params)
+        begin
+          res = self.call(:modify_prompt_wav_inline, message: params)
+          res[:modify_prompt_wav_inline_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -90,7 +115,12 @@ module Five9Tools
 
     def modify_campaign_profile_crm_criteria(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_campaign_profile_crm_criteria, message: params)
+        begin
+          res = self.call(:modify_campaign_profile_crm_criteria, message: params)
+          res[:modify_campaign_profile_crm_criteria_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -102,7 +132,12 @@ module Five9Tools
 
     def modify_contact_field(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_contact_field, message: params)
+        begin
+          res = self.call(:modify_contact_field, message: params)
+          res[:modify_contact_field_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -114,7 +149,12 @@ module Five9Tools
 
     def modify_campaign_profile_dispositions(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_campaign_profile_dispositions, message: params)
+        begin
+          res = self.call(:modify_campaign_profile_dispositions, message: params)
+          res[:modify_campaign_profile_dispositions_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -126,7 +166,12 @@ module Five9Tools
 
     def modify_vcc_configuration(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_vcc_configuration, message: params)
+        begin
+          res = self.call(:modify_vcc_configuration, message: params)
+          res[:modify_vcc_configuration_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -138,7 +183,12 @@ module Five9Tools
 
     def modify_outbound_campaign(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_outbound_campaign, message: params)
+        begin
+          res = self.call(:modify_outbound_campaign, message: params)
+          res[:modify_outbound_campaign_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -150,7 +200,12 @@ module Five9Tools
 
     def modify_user_canned_reports(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_user_canned_reports, message: params)
+        begin
+          res = self.call(:modify_user_canned_reports, message: params)
+          res[:modify_user_canned_reports_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -162,7 +217,12 @@ module Five9Tools
 
     def modify_agent_group(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_agent_group, message: params)
+        begin
+          res = self.call(:modify_agent_group, message: params)
+          res[:modify_agent_group_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -174,7 +234,12 @@ module Five9Tools
 
     def modify_skill(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_skill, message: params)
+        begin
+          res = self.call(:modify_skill, message: params)
+          res[:modify_skill_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -186,7 +251,12 @@ module Five9Tools
 
     def modify_campaign_profile_filter_order(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_campaign_profile_filter_order, message: params)
+        begin
+          res = self.call(:modify_campaign_profile_filter_order, message: params)
+          res[:modify_campaign_profile_filter_order_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -198,7 +268,12 @@ module Five9Tools
 
     def modify_disposition(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_disposition, message: params)
+        begin
+          res = self.call(:modify_disposition, message: params)
+          res[:modify_disposition_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -210,7 +285,12 @@ module Five9Tools
 
     def modify_ivr_script(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_ivr_script, message: params)
+        begin
+          res = self.call(:modify_ivr_script, message: params)
+          res[:modify_ivr_script_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -222,7 +302,12 @@ module Five9Tools
 
     def modify_prompt_wav(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_prompt_wav, message: params)
+        begin
+          res = self.call(:modify_prompt_wav, message: params)
+          res[:modify_prompt_wav_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -234,7 +319,12 @@ module Five9Tools
 
     def user_skill_modify(params = {})
       if params.is_a?(Hash)
-        self.call(:user_skill_modify, message: params)
+        begin
+          res = self.call(:user_skill_modify, message: params)
+          res[:user_skill_modify_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -246,7 +336,12 @@ module Five9Tools
 
     def modify_user_profile(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_user_profile, message: params)
+        begin
+          res = self.call(:modify_user_profile, message: params)
+          res[:modify_user_profile_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -258,7 +353,12 @@ module Five9Tools
 
     def modify_inbound_campaign(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_inbound_campaign, message: params)
+        begin
+          res = self.call(:modify_inbound_campaign, message: params)
+          res[:modify_inbound_campaign_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -270,7 +370,12 @@ module Five9Tools
 
     def modify_user_profile_skills(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_user_profile_skills, message: params)
+        begin
+          res = self.call(:modify_user_profile_skills, message: params)
+          res[:modify_user_profile_skills_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -282,7 +387,12 @@ module Five9Tools
 
     def modify_prompt_tts(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_prompt_tts, message: params)
+        begin
+          res = self.call(:modify_prompt_tts, message: params)
+          res[:modify_prompt_tts_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -294,7 +404,12 @@ module Five9Tools
 
     def modify_campaign_lists(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_campaign_lists, message: params)
+        begin
+          res = self.call(:modify_campaign_lists, message: params)
+          res[:modify_campaign_lists_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -306,7 +421,12 @@ module Five9Tools
 
     def modify_user(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_user, message: params)
+        begin
+          res = self.call(:modify_user, message: params)
+          res[:modify_user_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -318,7 +438,12 @@ module Five9Tools
 
     def modify_campaign_profile(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_campaign_profile, message: params)
+        begin
+          res = self.call(:modify_campaign_profile, message: params)
+          res[:modify_campaign_profile_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -330,7 +455,12 @@ module Five9Tools
 
     def modify_reason_code(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_reason_code, message: params)
+        begin
+          res = self.call(:modify_reason_code, message: params)
+          res[:modify_reason_code_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -342,7 +472,12 @@ module Five9Tools
 
     def modify_call_variable(params = {})
       if params.is_a?(Hash)
-        self.call(:modify_call_variable, message: params)
+        begin
+          res = self.call(:modify_call_variable, message: params)
+          res[:modify_call_variable_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end

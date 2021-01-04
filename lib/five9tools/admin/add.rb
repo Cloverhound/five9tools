@@ -10,7 +10,12 @@ module Five9Tools
 
     def async_add_records_to_list(params = {})
       if params.is_a?(Hash)
-        self.call(:async_add_records_to_list, message: params)
+        begin
+          res = self.call(:async_add_records_to_list, message: params)
+          res[:async_add_records_to_list_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -22,7 +27,12 @@ module Five9Tools
 
     def add_dispositions_to_campaign(params = {})
       if params.is_a?(Hash)
-        self.call(:add_dispositions_to_campaign, message: params)
+        begin
+          res = self.call(:add_dispositions_to_campaign, message: params)
+          res[:add_dispositions_to_campaign_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -34,7 +44,12 @@ module Five9Tools
 
     def add_to_list_csv(params = {})
       if params.is_a?(Hash)
-        self.call(:add_to_list_csv, message: params)
+        begin
+          res = self.call(:add_to_list_csv, message: params)
+          res[:add_to_list_csv_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -46,7 +61,12 @@ module Five9Tools
 
     def add_record_to_list(params = {})
       if params.is_a?(Hash)
-        self.call(:add_record_to_list, message: params)
+        begin
+          res = self.call(:add_record_to_list, message: params)
+          res[:add_record_to_list_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -58,7 +78,12 @@ module Five9Tools
 
     def add_lists_to_campaign(params = {})
       if params.is_a?(Hash)
-        self.call(:add_lists_to_campaign, message: params)
+        begin
+          res = self.call(:add_lists_to_campaign, message: params)
+          res[:add_lists_to_campaign_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -70,7 +95,12 @@ module Five9Tools
 
     def add_numbers_to_dnc(params = {})
       if params.is_a?(Hash)
-        self.call(:add_numbers_to_dnc, message: params)
+        begin
+          res = self.call(:add_numbers_to_dnc, message: params)
+          res[:add_numbers_to_dnc_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -82,7 +112,12 @@ module Five9Tools
 
     def add_skill_audio_file(params = {})
       if params.is_a?(Hash)
-        self.call(:add_skill_audio_file, message: params)
+        begin
+          res = self.call(:add_skill_audio_file, message: params)
+          res[:add_skill_audio_file_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -94,7 +129,12 @@ module Five9Tools
 
     def add_to_list_ftp(params = {})
       if params.is_a?(Hash)
-        self.call(:add_to_list_ftp, message: params)
+        begin
+          res = self.call(:add_to_list_ftp, message: params)
+          res[:add_to_list_ftp_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -106,7 +146,12 @@ module Five9Tools
 
     def add_skills_to_campaign(params = {})
       if params.is_a?(Hash)
-        self.call(:add_skills_to_campaign, message: params)
+        begin
+          res = self.call(:add_skills_to_campaign, message: params)
+          res[:add_skills_to_campaign_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -118,7 +163,12 @@ module Five9Tools
 
     def add_record_to_list_simple(params = {})
       if params.is_a?(Hash)
-        self.call(:add_record_to_list_simple, message: params)
+        begin
+          res = self.call(:add_record_to_list_simple, message: params)
+          res[:add_record_to_list_simple_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -130,7 +180,12 @@ module Five9Tools
 
     def user_skill_add(params = {})
       if params.is_a?(Hash)
-        self.call(:user_skill_add, message: params)
+        begin
+          res = self.call(:user_skill_add, message: params)
+          res[:user_skill_add_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -142,7 +197,12 @@ module Five9Tools
 
     def add_prompt_wav_inline(params = {})
       if params.is_a?(Hash)
-        self.call(:add_prompt_wav_inline, message: params)
+        begin
+          res = self.call(:add_prompt_wav_inline, message: params)
+          res[:add_prompt_wav_inline_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -154,7 +214,12 @@ module Five9Tools
 
     def add_prompt_wav(params = {})
       if params.is_a?(Hash)
-        self.call(:add_prompt_wav, message: params)
+        begin
+          res = self.call(:add_prompt_wav, message: params)
+          res[:add_prompt_wav_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -166,7 +231,12 @@ module Five9Tools
 
     def add_to_list(params = {})
       if params.is_a?(Hash)
-        self.call(:add_to_list, message: params)
+        begin
+          res = self.call(:add_to_list, message: params)
+          res[:add_to_list_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -178,7 +248,12 @@ module Five9Tools
 
     def add_prompt_tts(params = {})
       if params.is_a?(Hash)
-        self.call(:add_prompt_tts, message: params)
+        begin
+          res = self.call(:add_prompt_tts, message: params)
+          res[:add_prompt_tts_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -190,7 +265,12 @@ module Five9Tools
 
     def add_dnis_to_campaign(params = {})
       if params.is_a?(Hash)
-        self.call(:add_dnis_to_campaign, message: params)
+        begin
+          res = self.call(:add_dnis_to_campaign, message: params)
+          res[:add_dnis_to_campaign_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end

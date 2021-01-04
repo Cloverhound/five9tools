@@ -24,8 +24,12 @@ namespace :files do
   end
 end
 
+#Rake task that is used to write all possible operations into methods based on the xml files from the Five9 API
+# @example  Sample rake task
+#   rake files:generate_code\[lib/xml\]
+
 namespace :files do
-  task :generate_operation_codesets, :directory_of_xml_files do |t, params|
+  task :generate_code, :directory_of_xml_files do |t, params|
     xml_request_sample_files = Dir["#{params[:directory_of_xml_files]}/**/*.xml"]
     request_hashes = convert_xml_request_samples_to_hashes(xml_request_sample_files)
     unless File.exist?("lib/admin_code_gen") then Dir.mkdir("lib/admin_code_gen") end
@@ -80,16 +84,21 @@ end
 
 def generate_code_for_request_hash(request_hash)
   begin
-    operation = request_hash.keys.first.to_s
+    operation_snake_case = operation.underscore
     params = request_hash.to_s
     "
     #Api request for #{operation}.
     # @example Accepts the following parameters as a hash:
     #   #{params}
 
-    def #{operation.underscore} (params={})
+    def #{operation_snake_case} (params={})
       if params.is_a?(Hash)
-        self.call(:#{operation.underscore}, message: params)
+        begin
+          res = self.call(:#{operation_snake_case}, message: params)
+          res[:#{operation_snake_case}_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         \"Implement something for simple use case\"
       end

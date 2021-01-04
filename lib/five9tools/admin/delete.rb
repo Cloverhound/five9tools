@@ -8,9 +8,18 @@ module Five9Tools
     # @example Accepts the following parameters as a hash:
     #   {"deleteList"=>{"listName"=>"?"}}
 
+    #Api request for deleteList.
+    # @example Accepts the following parameters as a hash:
+    #   {"deleteList"=>{"listName"=>"?"}}
+
     def delete_list(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_list, message: params)
+        begin
+          res = self.call(:delete_list, message: params)
+          res[:delete_list_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -22,7 +31,12 @@ module Five9Tools
 
     def delete_from_contacts(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_from_contacts, message: params)
+        begin
+          res = self.call(:delete_from_contacts, message: params)
+          res[:delete_from_contacts_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -34,7 +48,12 @@ module Five9Tools
 
     def delete_from_list_csv(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_from_list_csv, message: params)
+        begin
+          res = self.call(:delete_from_list_csv, message: params)
+          res[:delete_from_list_csv_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -46,7 +65,12 @@ module Five9Tools
 
     def delete_user(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_user, message: params)
+        begin
+          res = self.call(:delete_user, message: params)
+          res[:delete_user_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -58,7 +82,12 @@ module Five9Tools
 
     def delete_call_variable(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_call_variable, message: params)
+        begin
+          res = self.call(:delete_call_variable, message: params)
+          res[:delete_call_variable_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -70,7 +99,12 @@ module Five9Tools
 
     def delete_from_list_ftp(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_from_list_ftp, message: params)
+        begin
+          res = self.call(:delete_from_list_ftp, message: params)
+          res[:delete_from_list_ftp_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -82,7 +116,12 @@ module Five9Tools
 
     def delete_reason_code(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_reason_code, message: params)
+        begin
+          res = self.call(:delete_reason_code, message: params)
+          res[:delete_reason_code_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -94,7 +133,12 @@ module Five9Tools
 
     def async_delete_records_from_list(params = {})
       if params.is_a?(Hash)
-        self.call(:async_delete_records_from_list, message: params)
+        begin
+          res = self.call(:async_delete_records_from_list, message: params)
+          res[:async_delete_records_from_list_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -106,7 +150,12 @@ module Five9Tools
 
     def delete_skill(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_skill, message: params)
+        begin
+          res = self.call(:delete_skill, message: params)
+          res[:delete_skill_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -118,7 +167,12 @@ module Five9Tools
 
     def delete_all_from_list(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_all_from_list, message: params)
+        begin
+          res = self.call(:delete_all_from_list, message: params)
+          res[:delete_all_from_list_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -130,7 +184,12 @@ module Five9Tools
 
     def delete_campaign(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_campaign, message: params)
+        begin
+          res = self.call(:delete_campaign, message: params)
+          res[:delete_campaign_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -142,7 +201,12 @@ module Five9Tools
 
     def delete_agent_group(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_agent_group, message: params)
+        begin
+          res = self.call(:delete_agent_group, message: params)
+          res[:delete_agent_group_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -154,7 +218,12 @@ module Five9Tools
 
     def delete_ivr_script(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_ivr_script, message: params)
+        begin
+          res = self.call(:delete_ivr_script, message: params)
+          res[:delete_ivr_script_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -166,7 +235,12 @@ module Five9Tools
 
     def delete_from_list(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_from_list, message: params)
+        begin
+          res = self.call(:delete_from_list, message: params)
+          res[:delete_from_list_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -178,7 +252,12 @@ module Five9Tools
 
     def delete_campaign_profile(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_campaign_profile, message: params)
+        begin
+          res = self.call(:delete_campaign_profile, message: params)
+          res[:delete_campaign_profile_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -190,7 +269,12 @@ module Five9Tools
 
     def delete_user_profile(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_user_profile, message: params)
+        begin
+          res = self.call(:delete_user_profile, message: params)
+          res[:delete_user_profile_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -202,7 +286,12 @@ module Five9Tools
 
     def delete_contact_field(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_contact_field, message: params)
+        begin
+          res = self.call(:delete_contact_field, message: params)
+          res[:delete_contact_field_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -214,7 +303,12 @@ module Five9Tools
 
     def delete_from_contacts_ftp(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_from_contacts_ftp, message: params)
+        begin
+          res = self.call(:delete_from_contacts_ftp, message: params)
+          res[:delete_from_contacts_ftp_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -226,7 +320,12 @@ module Five9Tools
 
     def delete_call_variables_group(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_call_variables_group, message: params)
+        begin
+          res = self.call(:delete_call_variables_group, message: params)
+          res[:delete_call_variables_group_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -238,7 +337,12 @@ module Five9Tools
 
     def delete_reason_code_by_type(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_reason_code_by_type, message: params)
+        begin
+          res = self.call(:delete_reason_code_by_type, message: params)
+          res[:delete_reason_code_by_type_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -250,7 +354,12 @@ module Five9Tools
 
     def delete_web_connector(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_web_connector, message: params)
+        begin
+          res = self.call(:delete_web_connector, message: params)
+          res[:delete_web_connector_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -262,7 +371,12 @@ module Five9Tools
 
     def delete_prompt(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_prompt, message: params)
+        begin
+          res = self.call(:delete_prompt, message: params)
+          res[:delete_prompt_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -274,7 +388,12 @@ module Five9Tools
 
     def delete_language_prompt(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_language_prompt, message: params)
+        begin
+          res = self.call(:delete_language_prompt, message: params)
+          res[:delete_language_prompt_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -286,7 +405,12 @@ module Five9Tools
 
     def delete_record_from_list(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_record_from_list, message: params)
+        begin
+          res = self.call(:delete_record_from_list, message: params)
+          res[:delete_record_from_list_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
@@ -298,7 +422,12 @@ module Five9Tools
 
     def delete_from_contacts_csv(params = {})
       if params.is_a?(Hash)
-        self.call(:delete_from_contacts_csv, message: params)
+        begin
+          res = self.call(:delete_from_contacts_csv, message: params)
+          res[:delete_from_contacts_csv_response][:return]
+        rescue => e
+          e.to_hash[:fault]
+        end
       else
         "Implement something for simple use case"
       end
