@@ -97,7 +97,7 @@ def generate_code_for_request_hash(request_hash)
           res = self.call(:#{operation_snake_case}, message: params)
           res[:#{operation_snake_case}_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e
         end
       else
         \"Implement something for simple use case\"

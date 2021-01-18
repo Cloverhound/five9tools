@@ -14,7 +14,7 @@ module Five9Tools
           res = self.call(:is_import_running, message: params)
           res[:is_import_running_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -31,7 +31,7 @@ module Five9Tools
           res = self.call(:stop_campaign, message: params)
           res[:stop_campaign_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -48,7 +48,7 @@ module Five9Tools
           res = self.call(:set_default_ivr_schedule, message: params)
           res[:set_default_ivr_schedule_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -65,7 +65,7 @@ module Five9Tools
           res = self.call(:reset_campaign, message: params)
           res[:reset_campaign_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -82,7 +82,7 @@ module Five9Tools
           res = self.call(:force_stop_campaign, message: params)
           res[:force_stop_campaign_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -99,7 +99,7 @@ module Five9Tools
           res = self.call(:close_session, message: params)
           res[:close_session_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -116,7 +116,7 @@ module Five9Tools
           res = self.call(:set_locale, message: params)
           res[:set_locale_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -133,7 +133,7 @@ module Five9Tools
           res = self.call(:set_ivr_icons, message: params)
           res[:set_ivr_icons_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -150,7 +150,7 @@ module Five9Tools
           res = self.call(:set_campaign_strategies, message: params)
           res[:set_campaign_strategies_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -167,7 +167,7 @@ module Five9Tools
           res = self.call(:start_campaign, message: params)
           res[:start_campaign_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -184,7 +184,7 @@ module Five9Tools
           res = self.call(:rename_disposition, message: params)
           res[:rename_disposition_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -201,7 +201,7 @@ module Five9Tools
           res = self.call(:is_report_running, message: params)
           res[:is_report_running_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -218,7 +218,7 @@ module Five9Tools
           res = self.call(:rename_campaign, message: params)
           res[:rename_campaign_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -235,7 +235,7 @@ module Five9Tools
           res = self.call(:reset_campaign_dispositions, message: params)
           res[:reset_campaign_dispositions_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -252,7 +252,7 @@ module Five9Tools
           res = self.call(:set_skill_voicemail_greeting, message: params)
           res[:set_skill_voicemail_greeting_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -269,7 +269,7 @@ module Five9Tools
           res = self.call(:set_ivr_script_ownership, message: params)
           res[:set_ivr_script_ownership_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -286,7 +286,7 @@ module Five9Tools
           res = self.call(:set_dialing_rules, message: params)
           res[:set_dialing_rules_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -303,7 +303,7 @@ module Five9Tools
           res = self.call(:check_dnc_for_numbers, message: params)
           res[:check_dnc_for_numbers_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -320,7 +320,7 @@ module Five9Tools
           res = self.call(:set_user_voicemail_greeting, message: params)
           res[:set_user_voicemail_greeting_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -337,7 +337,7 @@ module Five9Tools
           res = self.call(:reset_list_position, message: params)
           res[:reset_list_position_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -354,7 +354,7 @@ module Five9Tools
           res = self.call(:run_report, message: params)
           res[:run_report_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
