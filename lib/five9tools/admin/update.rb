@@ -14,7 +14,7 @@ module Five9Tools
           res = self.call(:update_dispositions_ftp, message: params)
           res[:update_dispositions_ftp_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -31,7 +31,7 @@ module Five9Tools
           res = self.call(:update_configuration_translations, message: params)
           res[:update_configuration_translations_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -48,7 +48,7 @@ module Five9Tools
           res = self.call(:update_crm_record, message: params)
           res[:update_crm_record_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -65,7 +65,7 @@ module Five9Tools
           res = self.call(:update_dispositions_csv, message: params)
           res[:update_dispositions_csv_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -82,7 +82,7 @@ module Five9Tools
           res = self.call(:async_update_crm_records, message: params)
           res[:async_update_crm_records_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -99,7 +99,7 @@ module Five9Tools
           res = self.call(:update_dispositions, message: params)
           res[:update_dispositions_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -116,7 +116,7 @@ module Five9Tools
           res = self.call(:update_contacts_ftp, message: params)
           res[:update_contacts_ftp_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -133,7 +133,7 @@ module Five9Tools
           res = self.call(:update_contacts_csv, message: params)
           res[:update_contacts_csv_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -150,7 +150,7 @@ module Five9Tools
           res = self.call(:update_contacts, message: params)
           res[:update_contacts_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
@@ -167,7 +167,7 @@ module Five9Tools
           res = self.call(:async_update_campaign_dispositions, message: params)
           res[:async_update_campaign_dispositions_response][:return]
         rescue => e
-          e.to_hash[:fault]
+          e.to_s
         end
       else
         "Implement something for simple use case"
